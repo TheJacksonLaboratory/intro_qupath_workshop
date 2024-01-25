@@ -36,4 +36,45 @@ Research IT
 
 ## Welcome
 
+## What is QuPath?
 
+QuPath is an open-source image analysis program
+
+<br/>
+
+**Key feature**:  
+QuPath has a graphical user interface (`GUI`) for performant working with very large 2D images, like those produced by slide scanners
+
+---
+
+## A bit of background
+
+- project was started at The Queen's University Belfast by Pete Bankhead
+- first public release was in October 2016
+- currently developed by [Pete Bankhead's group at The University of Edinburgh](https://www.ed.ac.uk/pathology/people/staff-students/peter-bankhead)
+- \>7500 publications [using QuPath](https://scholar.google.com/scholar?start=0&q=qupath)
+
+---
+
+## Strengths of QuPath
+
+- It was designed for handling very large 2D files common to whole-slide imaging techniques
+
+- It includes robust algorithms for common analysis tasks
+
+- It includes *interactive* machine learning for pixel and object classification
+
+- Recordable workflows allow for easy batch processing
+
+- Integrated ImageJ
+
+- Robust scripting support (Groovy)
+
+---
+
+## Limitations
+
+- Limited *3D viewing* capabilities:
+    - single planes only
+
+- Some complex functions require scripting
