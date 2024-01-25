@@ -1,0 +1,39 @@
+---
+format: 
+    revealjs:
+        theme: default
+        logo: "images/JAX_logo_rgb_transparentback.png"
+        slide-number: true
+        footer: Imaging Applications, Research IT
+        transition: "slide"
+        highlight-style: arrow
+        chalkboard: 
+            buttons: false
+        controls-layout: bottom-right
+        controls: true
+---
+
+## Introduction to QuPath
+
+**Peter Sobolewski (he/him)**
+
+Systems Analyst, Imaging Applications
+
+Research IT
+
+:::: {.columns style='display: flex'}
+::: {.column width="50%" style='display: flex; justify-content: left; align-items: center;'}
+
+### [https://qupath.github.io](https://qupath.github.io) 
+
+:::
+::: {.column width="50%" style='display: flex; justify-content: center;'}
+
+![](images/qupath_128.png){fig-alt="QuPath logo" width=250} 
+
+:::
+::::
+
+## Welcome
+
+
