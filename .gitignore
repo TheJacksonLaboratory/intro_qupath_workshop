@@ -1,6 +1,10 @@
 ## scratch file
 scratch.md
 
+# quarto ignore
+/.quarto/
+/index_files/
+
 ### macOS .gitignore
 # General
 .DS_Store
