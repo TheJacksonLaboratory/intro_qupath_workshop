@@ -58,7 +58,9 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 
 ## Strengths of QuPath
 
-- It was designed for handling very large 2D files common to whole-slide imaging techniques
+- Was designed for very large, multiscale 2D files
+
+- Includes extensitve annotation, overlay, and visualization options
 
 - It includes robust algorithms for common analysis tasks
 
@@ -78,3 +80,45 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
     - single planes only
 
 - Some complex functions require scripting
+
+- Extension ecosystem is relatively limited
+
+---
+
+## Anatomy of a QuPath `project`
+
+- `projects` are the best way to organize your analysis work
+- `projects` are frequently required by some scripts/extensions
+- `projects` are folders:
+    - group together related images
+    - organize data, scripts, classifiers, etc. 
+
+---
+
+## Anatomy of a QuPath `project`
+
+<br/>
+
+![](images/project_folder.png){fig-alt="Screenshot showing the contents of a QuPath project folder." fig-align="center"}
+
+---
+
+## Anatomy of a QuPath `project`
+
+- **image files will not be copied into your `project` folder!** 
+    - A link (`URI`) will be used! 
+    - If you move the file(s) you will be prompted to update the link.
+- QuPath can handle large 2D images, e.g. whole-slide images
+    - *there is no need to make tiles first*
+    - QuPath will generate multiscale (pyramids) representations as needed
+
+---
+
+## Anatomy of a QuPath `project`
+
+- **QuPath will never edit your image files!**
+    - `images` in a `project` are are actually QuPath objects holding metadata, annotations, etc. are handled
+    - the image data/pixels are accessed from the files via an `ImageServer`
+    - duplicating or saving `images` with a `project` only relates to QuPath specific data and **not** the original files or pixels
+
+---
