@@ -4,6 +4,7 @@ scratch.md
 # quarto ignore
 /.quarto/
 /index_files/
+index.html
 
 ### macOS .gitignore
 # General
