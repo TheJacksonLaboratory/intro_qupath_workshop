@@ -8,7 +8,7 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.550">
 
   <title>index</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -396,44 +396,126 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 </section>
 <section id="anatomy-of-a-qupath-project-1" class="slide level2">
 <h2>Anatomy of a QuPath <code>project</code></h2>
-<p><br></p>
-
-<img data-src="images/project_folder.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot showing the contents of a QuPath project folder."></section>
+<h3 id="how-create-a-project">How create a project?</h3>
+<ul>
+<li><code>Create project</code> button</li>
+<li>File ‣ Project… ‣ Create project</li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>When making a project, remember to ceate a folder for it!</strong></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Drag-and-drop an empty folder</li>
+</ul>
+</section>
 <section id="anatomy-of-a-qupath-project-2" class="slide level2">
 <h2>Anatomy of a QuPath <code>project</code></h2>
+
+<img data-src="images/project_folder.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot showing the contents of a QuPath project folder."></section>
+<section id="anatomy-of-a-qupath-project-3" class="slide level2">
+<h2>Anatomy of a QuPath <code>project</code></h2>
+<h3 id="how-to-add-images">How to add images?</h3>
 <ul>
-<li><strong>image files will not be copied into your <code>project</code> folder!</strong>
+<li>Drag and drop</li>
+<li>File ‣ Project… ‣ Add images</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>image files will not be copied into your <code>project</code> folder!</strong></p>
+</div>
+<div class="callout-content">
 <ul>
 <li>A link (<code>URI</code>) will be used!</li>
 <li>If you move the file(s) you will be prompted to update the link.</li>
-</ul></li>
-<li>QuPath can handle large 2D images, e.g.&nbsp;whole-slide images
-<ul>
-<li><em>there is no need to make tiles first</em></li>
-<li>QuPath will generate multiscale (pyramids) representations as needed</li>
-</ul></li>
 </ul>
-</section>
-<section id="anatomy-of-a-qupath-project-3" class="slide level2">
-<h2>Anatomy of a QuPath <code>project</code></h2>
-<ul>
-<li><strong>QuPath will never edit your image files!</strong>
-<ul>
-<li><code>images</code> in a <code>project</code> are are actually QuPath objects holding metadata, annotations, etc. are handled</li>
-<li>the image data/pixels are accessed from the files via an <code>ImageServer</code></li>
-<li>duplicating or saving <code>images</code> with a <code>project</code> only relates to QuPath specific data and <strong>not</strong> the original files or pixels</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
+</div>
+</div>
+</div>
 
+<aside><div>
+<p>QuPath can handle large 2D images, e.g.&nbsp;whole-slide images—<em>there is no need to make tiles first</em></p>
+</div></aside></section>
+<section id="anatomy-of-a-qupath-project-4" class="slide level2">
+<h2>Anatomy of a QuPath <code>project</code></h2>
+<h3 id="qupath-will-never-edit-your-image-files">QuPath will never edit your image files!</h3>
+<ul>
+<li><code>images</code> in a <code>project</code> are actually QuPath objects holding metadata, annotations, etc.</li>
+<li>The image data/pixels are accessed from the files via an <code>ImageServer</code></li>
+<li>Duplicating/saving <code>images</code> within a <code>project</code> only relates to QuPath specific data, <strong>not</strong> the original files or pixels</li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>When images are removed from a project, the data files are not deleted!</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</section>
+<section>
+<section id="lets-make-our-first-qupath-project" class="title-slide slide level1 center">
+<h1>Let’s make our first QuPath project!</h1>
+
+</section>
+<section id="launch-qupath" class="slide level2">
+<h2>Launch QuPath</h2>
+
+<img data-src="images/qupath_welcome.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot showing the QuPath welcome screen."></section>
+<section id="click-create-project" class="slide level2">
+<h2>Click <code>Create project</code></h2>
+
+<img data-src="images/create_project_1.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot showing the `create project` button in red."></section>
+<section id="make-sure-to-make-a-new-empty-folder" class="slide level2">
+<h2>Make sure to make a new, empty folder</h2>
+
+<img data-src="images/create_project_2.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot showing the file browser with the `New Folder` button in red."></section>
+<section id="select-the-empty-folder-for-the-project" class="slide level2">
+<h2>Select the empty folder for the project</h2>
+
+<img data-src="images/create_project_3.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot showing the file browser with empty project folder."></section>
+<section id="add-an-image" class="slide level2">
+<h2>Add an image</h2>
+
+<img data-src="images/add_image_1.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot showing the `Add images` button in red."><h3 id="use-drag-and-drop">Use drag-and-drop!</h3>
+</section>
+<section id="use-choose-filesor-drag-and-drop" class="slide level2">
+<h2>Use <code>Choose files</code>—or drag-and-drop</h2>
+
+<img data-src="images/add_image_2.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of `Import images to project` dialog with `Choose files` button in red."></section>
+<section id="click-import" class="slide level2">
+<h2>Click <code>Import</code></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/add_image_3.png" class="quarto-figure quarto-figure-center" alt="Screenshot of `Import images to project` dialog."></p>
+</figure>
+</div>
+<h3 id="defaults-are-ok-for-the-majority-of-cases">Defaults are OK for the majority of cases</h3>
 <div class="quarto-auto-generated-content">
 <p><img src="images/JAX_logo_rgb_transparentback.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Imaging Applications, Research IT</p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
