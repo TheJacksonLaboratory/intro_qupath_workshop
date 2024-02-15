@@ -130,3 +130,40 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ### When images are removed from a project, the data files are not deleted!
 :::
 
+# Let's make our first QuPath project!
+
+## Launch QuPath
+
+![](images/qupath_welcome.png){fig-alt="Screenshot showing the QuPath welcome screen." fig-align="center"}
+
+## Click `Create project`
+
+![](images/create_project_1.png){fig-alt="Inset of screenshot showing the `create project` button in red." fig-align="center"}
+
+## Make sure to make a new, empty folder
+
+![](images/create_project_2.png){fig-alt="Screenshot showing the file browser with the `New Folder` button in red." fig-align="center"}
+
+## Select the empty folder for the project
+
+![](images/create_project_3.png){fig-alt="Screenshot showing the file browser with empty project folder." fig-align="center"}
+
+## Add an image
+
+![](images/add_image_1.png){fig-alt="Inset of screenshot showing the `Add images` button in red." fig-align="center"}
+
+### Use drag-and-drop!
+
+## Use `Choose files`—or drag-and-drop
+
+![](images/add_image_2.png){fig-alt="Screenshot of `Import images to project` dialog with `Choose files` button in red." fig-align="center"}
+
+## Click `Import`
+
+![](images/add_image_3.png){fig-alt="Screenshot of `Import images to project` dialog." fig-align="center"}
+
+### Defaults are OK for the majority of cases
+
+
+
+
