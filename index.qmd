@@ -45,16 +45,12 @@ QuPath is an open-source image analysis program
 **Key feature**:  
 QuPath has a graphical user interface (`GUI`) for performant working with very large 2D images, like those produced by slide scanners
 
----
-
 ## A bit of background
 
 - project was started at The Queen's University Belfast by Pete Bankhead
 - first public release was in October 2016
 - currently developed by [Pete Bankhead's group at The University of Edinburgh](https://www.ed.ac.uk/pathology/people/staff-students/peter-bankhead)
 - \>7500 publications [using QuPath](https://scholar.google.com/scholar?start=0&q=qupath)
-
----
 
 ## Strengths of QuPath
 
@@ -72,8 +68,6 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 
 - Robust scripting support (Groovy)
 
----
-
 ## Limitations
 
 - Limited *3D viewing* capabilities:
@@ -83,8 +77,6 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 
 - Extension ecosystem is relatively limited
 
----
-
 ## Anatomy of a QuPath `project`
 
 - `projects` are the best way to organize your analysis work
@@ -93,32 +85,48 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
     - group together related images
     - organize data, scripts, classifiers, etc. 
 
----
-
 ## Anatomy of a QuPath `project`
 
-<br/>
+### How create a project?
+
+- `Create project` button
+- File ‣ Project… ‣ Create project
+
+:::{.callout-important}
+**When making a project, remember to ceate a folder for it!**
+:::
+
+- Drag-and-drop an empty folder
+
+## Anatomy of a QuPath `project`
 
 ![](images/project_folder.png){fig-alt="Screenshot showing the contents of a QuPath project folder." fig-align="center"}
 
----
+## Anatomy of a QuPath `project`
+
+### How to add images?
+
+- Drag and drop
+- File ‣ Project… ‣ Add images
+
+:::{.callout-note}
+#### image files will not be copied into your `project` folder!
+- A link (`URI`) will be used! 
+- If you move the file(s) you will be prompted to update the link.
+:::
+
+:::aside
+QuPath can handle large 2D images, e.g. whole-slide images—*there is no need to make tiles first*
+:::
 
 ## Anatomy of a QuPath `project`
 
-- **image files will not be copied into your `project` folder!** 
-    - A link (`URI`) will be used! 
-    - If you move the file(s) you will be prompted to update the link.
-- QuPath can handle large 2D images, e.g. whole-slide images
-    - *there is no need to make tiles first*
-    - QuPath will generate multiscale (pyramids) representations as needed
+### QuPath will never edit your image files!
+- `images` in a `project` are actually QuPath objects holding metadata, annotations, etc.
+- The image data/pixels are accessed from the files via an `ImageServer`
+- Duplicating/saving `images` within a `project` only relates to QuPath specific data, **not** the original files or pixels
 
----
+:::{.callout-important}
+### When images are removed from a project, the data files are not deleted!
+:::
 
-## Anatomy of a QuPath `project`
-
-- **QuPath will never edit your image files!**
-    - `images` in a `project` are are actually QuPath objects holding metadata, annotations, etc. are handled
-    - the image data/pixels are accessed from the files via an `ImageServer`
-    - duplicating or saving `images` with a `project` only relates to QuPath specific data and **not** the original files or pixels
-
----
