@@ -11,6 +11,7 @@ format:
             buttons: false
         controls-layout: bottom-right
         controls: true
+from: markdown+emoji
 ---
 
 ## Introduction to QuPath
@@ -166,11 +167,29 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ### Defaults are OK for the majority of cases
 
-# QuPath GUI layout
+## Set Image type
 
-## Application window
+![](images/set_image_type.png){fig-alt="Screenshot of `Set image type` dialog." fig-align="center"}
+
+:::{.callout-important}
+### This affects the behavior of tools & features!
+:::
+
+## :tada: QuPath project with an image :tada:
 
 ![](images/QuPath_main_window.png){fig-alt="Screenshot of QuPath application window with a single image in the `Analysis pane`." fig-align="center"}
+
+# QuPath GUI layout
+
+## Analysis Pane : Project tab
+
+![](images/analysis_pane.png){fig-alt="Inset of screenshot of QuPath application window with a single image in the `Analysis pane` Project tab." fig-align="center"}
+
+### Double-click an image to open it in the `viewer` on the right
+
+## Analysis Pane : Image tab
+
+![](images/analysis_pane_image.png){fig-alt="Inset of screenshot of QuPath application window `Analysis pane` with CMU-1.svs image open." fig-align="center"}
 
 ## QuPath toolbar
 
@@ -191,3 +210,19 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ## QuPath toolbar: annotation
 
 ![](images/QuPath_annotation_tools_1.png){fig-alt="Inset of screenshot of QuPath application window (top left) showing annotation tools in red." fig-align="center"}
+
+- **+** : Move tool: pan around the image or move objects
+    - can toggle with `Spacebar`
+- For Ellipse & Rectangle can also use Objects ‣ Annotations… ‣ Specify annotation
+- For Brush tool `Alt/Option` key enables subtract mode
+- Magic wand: brush that takes into account intensity & zoom
+- **S** : Switch to selection mode, where tools *select* objects instead
+
+## Annotation tool keybindings
+
+- Tools are also accessible in the `Tools` menu, which shows the shortcuts
+
+![](images/QuPath_tools_menu.png){fig-alt="Inset of screenshot of QuPath  window (top left) showing annotation the Tools menu." fig-align="center"}
+
+## Annotation tool preferences
+
