@@ -77,7 +77,15 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 
 - Extension ecosystem is relatively limited
 
-## Anatomy of a QuPath `project`
+## Getting help
+
+- In-app documentation: Help menu
+- Online documentation: [https://qupath.readthedocs.io/en/stable/index.html](https://qupath.readthedocs.io/en/stable/index.html)
+    - Includes tutorials, scripting, advanced concepts
+- YouTube Channel: [https://www.youtube.com/c/QuPath](https://www.youtube.com/c/QuPath)
+- Image.sc Forums: [https://forum.image.sc/tag/qupath](https://forum.image.sc/tag/qupath)
+
+## Key concept: QuPath `project`
 
 - `projects` are the best way to organize your analysis work
 - `projects` are frequently required by some scripts/extensions
@@ -85,9 +93,7 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
     - group together related images
     - organize data, scripts, classifiers, etc. 
 
-## Anatomy of a QuPath `project`
-
-### How create a project?
+## How create a project?
 
 - `Create project` button
 - File ‣ Project… ‣ Create project
@@ -102,9 +108,7 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 
 ![](images/project_folder.png){fig-alt="Screenshot showing the contents of a QuPath project folder." fig-align="center"}
 
-## Anatomy of a QuPath `project`
-
-### How to add images?
+## How to add images to a project?
 
 - Drag and drop
 - File ‣ Project… ‣ Add images
@@ -119,9 +123,7 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 QuPath can handle large 2D images, e.g. whole-slide images—*there is no need to make tiles first*
 :::
 
-## Anatomy of a QuPath `project`
-
-### QuPath will never edit your image files!
+## QuPath will never edit your image files!
 - `images` in a `project` are actually QuPath objects holding metadata, annotations, etc.
 - The image data/pixels are accessed from the files via an `ImageServer`
 - Duplicating/saving `images` within a `project` only relates to QuPath specific data, **not** the original files or pixels
@@ -163,7 +165,4 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ![](images/add_image_3.png){fig-alt="Screenshot of `Import images to project` dialog." fig-align="center"}
 
 ### Defaults are OK for the majority of cases
-
-
-
 
