@@ -191,6 +191,15 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ![](images/analysis_pane_image.png){fig-alt="Inset of screenshot of QuPath application window `Analysis pane` with CMU-1.svs image open." fig-align="center"}
 
+## Analysis Pane : Image tab
+
+- Name and location of the image file
+- Pixel width/height: scale calibration, read from metadata
+    - can set yourself using a `Line` annotation
+- Server type: how QuPath is reading the raw image file
+- Pyramid: levels of downsampling for performance
+- Image type: determines some default functions, e.g. channel information
+
 ## QuPath toolbar
 
 ![](images/QuPath_toolbar.png){fig-alt="Screenshot of QuPath application window with the toolbar marked in red." fig-align="center"}
@@ -204,8 +213,8 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 - Preferences: customize QuPath behavior, including look-and-feel, extensions, etc.
 - Log: message logger, showing Info, Warnings, and Errors—helpful when troubleshooting or asking for help
     - `Dot` notifies of un-read Errors
-- Interactive Help: Provides contextual help based on state of application/viewer, what you mouse over, etc. 
-    - `Dot` notifies for potential problems 
+- ***Interactive Help***: Provides contextual help based on state of application/viewer, what you mouse over, etc. 
+    - `Dot` notifies for potential problems, will offer solutions 
 
 ## QuPath toolbar: annotation
 
@@ -213,6 +222,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 - **+** : Move tool: pan around the image or move objects
     - can toggle with `Spacebar`
+    - Double-click to *select* objects
 - For Ellipse & Rectangle can also use Objects ‣ Annotations… ‣ Specify annotation
 - For Brush tool `Alt/Option` key enables subtract mode
 - Magic wand: brush that takes into account intensity & zoom
