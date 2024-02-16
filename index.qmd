@@ -166,3 +166,28 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ### Defaults are OK for the majority of cases
 
+# QuPath GUI layout
+
+## Application window
+
+![](images/QuPath_main_window.png){fig-alt="Screenshot of QuPath application window with a single image in the `Analysis pane`." fig-align="center"}
+
+## QuPath toolbar
+
+![](images/QuPath_toolbar.png){fig-alt="Screenshot of QuPath application window with the toolbar marked in red." fig-align="center"}
+
+## QuPath toolbar: information
+
+![](images/QuPath_info_tools.png){fig-alt="Screenshot of QuPath application window with the Prefereces, Log, and Interactive Help tools marked in red." fig-align="center"}
+
+## QuPath toolbar: information
+
+- Preferences: customize QuPath behavior, including look-and-feel, extensions, etc.
+- Log: message logger, showing Info, Warnings, and Errors—helpful when troubleshooting or asking for help
+    - `Dot` notifies of un-read Errors
+- Interactive Help: Provides contextual help based on state of application/viewer, what you mouse over, etc. 
+    - `Dot` notifies for potential problems 
+
+## QuPath toolbar: annotation
+
+![](images/QuPath_annotation_tools_1.png){fig-alt="Inset of screenshot of QuPath application window (top left) showing annotation tools in red." fig-align="center"}
