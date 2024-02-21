@@ -313,8 +313,53 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 - Annotation list lets you select, delete
     - Right-click to **lock** or edit properties (name, color)
     - You can shift or control click to multi-select
-- Classification list lets you assign Annotations to classes
+- Classification list lets you assign Annotations to `classes`
 
-## Annotation measurements
+## Analysis Pane: Annotation tab: Classes
 
+![](images/annotations_classes_menu.png){fig-alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane with the Classes submenu shown in red." fig-align="center"}
 
+- Classes group objects in a more powerful way than names
+- You can add your own classes or remove existing ones
+    - Note: `Populate` commands refer to the **class list**
+
+:::{.callout-important}
+### Majority of QuPath functions rely on using Classes
+:::
+
+## Analysis Pane: Annotations tab: Set and autoset
+
+![](images/annotations_classes_set.png){fig-alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane with the `Set selected` and `Auto set` buttons shown in red." fig-align="center"}
+
+- `Set selected` assigns all selected Annotations to a selected class
+- `Auto set` assigns all new Annotations (regardless of type) to the selected class
+
+:::{.callout-important}
+### Classes with a `*` are ignored in measurements, percentages, etc.
+:::
+
+## Analysis Pane: Annotation measurements
+
+![](images/Annotation_measurements_1.png){fig-alt="Inset of screenshot of QuPath  application showing the Annotations measurements pane of the Annotations tab of the Analysis Pane." fig-align="center"}
+
+- Annotations have basic Measurements that depend on their type (length, area, perimeter, etc.)
+
+## Annotation measurements: measurement tables
+
+![](images/toolbar_meas_script.png){fig-alt="Inset of screenshot of QuPath application window (top left) showing the Measurement Table and Script Editor tools in red." fig-align="center"}
+
+- You can generate a table using the `Show measurements table` Toolbar button
+
+## Analysis Pane: Hierarchy tab
+
+- Presents the relationship between objects:
+    - Parent > Child
+- If you have Annotations within an Annotation, you can use:
+    - Objects ‣ Annotations… ‣ Resolve hierarchy 
+        - QuPath will attempt to place all child objects with parent objects 
+    - Objects ‣ Annotations… ‣ Insert into hierarchy
+        - QuPath will insert the selected objects into the hierarchy
+
+:::{.callout-important}
+### For Annotations, the entire area of a child must be inside the parent
+:::
