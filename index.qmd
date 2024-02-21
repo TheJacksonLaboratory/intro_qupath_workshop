@@ -181,24 +181,46 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 # QuPath GUI layout
 
-## Analysis Pane : Project tab
+## Analysis Pane: Project tab
 
 ![](images/analysis_pane.png){fig-alt="Inset of screenshot of QuPath application window with a single image in the `Analysis pane` Project tab." fig-align="center"}
 
 ### Double-click an image to open it in the `viewer` on the right
 
-## Analysis Pane : Image tab
+## Analysis Pane: Project tab
+
+### Right-click on images to:
+- Rename, remove or duplicate
+    - When you duplicate, can choose to also copy the QuPath object data files
+- To add metadata or descriptions
+- Blind/Mask samples: replace names with hashes
+
+:::{.callout-important}
+### These changes only affect the QuPath objects in this project, not your data files!
+:::
+
+## Analysis Pane: Image tab
 
 ![](images/analysis_pane_image.png){fig-alt="Inset of screenshot of QuPath application window `Analysis pane` with CMU-1.svs image open." fig-align="center"}
 
-## Analysis Pane : Image tab
+## Analysis Pane: Image tab
 
 - Name and location of the image file
-- Pixel width/height: scale calibration, read from metadata
+- Pixel width/height: scale calibration, **very important**
     - can set yourself using a `Line` annotation
-- Server type: how QuPath is reading the raw image file
+- Server type: how QuPath is reading the raw image file, set at import
 - Pyramid: levels of downsampling for performance
 - Image type: determines some default functions, e.g. channel information
+
+## QuPath viewer
+
+![](images/qupath_viewer.png){fig-alt="Screenshot of QuPath application window with elements of the viewer highlighted in red." fig-align="center"}
+
+- Minimap: Image overview, allows for quick navigation
+- Info bar: gives Pixel coordinate and value
+- Right-click the viewer to close or make a grid
+
+# QuPath toolbar
 
 ## QuPath toolbar
 
@@ -210,23 +232,50 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ## QuPath toolbar: information
 
-- Preferences: customize QuPath behavior, including look-and-feel, extensions, etc.
+- Preferences: settings that customize QuPath behavior, including look-and-feel, extensions, etc.
 - Log: message logger, showing Info, Warnings, and Errors—helpful when troubleshooting or asking for help
     - `Dot` notifies of un-read Errors
 - ***Interactive Help***: Provides contextual help based on state of application/viewer, what you mouse over, etc. 
     - `Dot` notifies for potential problems, will offer solutions 
 
-## QuPath toolbar: annotation
+## QuPath toolbar: Annotation tools
 
 ![](images/QuPath_annotation_tools_1.png){fig-alt="Inset of screenshot of QuPath application window (top left) showing annotation tools in red." fig-align="center"}
 
 - **+** : Move tool: pan around the image or move objects
-    - can toggle with `Spacebar`
-    - Double-click to *select* objects
-- For Ellipse & Rectangle can also use Objects ‣ Annotations… ‣ Specify annotation
-- For Brush tool `Alt/Option` key enables subtract mode
-- Magic wand: brush that takes into account intensity & zoom
+- For the Polygon tool: double-click to end
+- Magic wand: context-aware brush that takes into account intensity & zoom
+- For Brush & Wand tool, `Alt/Option` key enables subtract mode
 - **S** : Switch to selection mode, where tools *select* objects instead
+
+## QuPath toolbar: brightness & contrast, zoom
+
+![](images/toolbar_BC_zoom.png){fig-alt="Inset of screenshot of QuPath application window (top left) showing B&C and Zoom tools in red." fig-align="center"}
+
+- Brightness & contrast dialog also allows for control of channels and colormaps
+- Can manually specify a zoom level by double-click
+- Zoom button resets zoom to fit whole image in viewer
+
+## QuPath toolbar: show/hide & fill, opacity
+
+![](images/toolbar_show_hide.png){fig-alt="Inset of screenshot of QuPath application window (top left) showing Annotation and Detection Show/Hide tools in red." fig-align="center"}
+
+- Enable showing Annotations or Detections, plus whether they are filled
+- `C`: show/hides pixel classification overlay
+- Slider controls opacity, so you can see through to the data beneath
+
+:::{.callout-important}
+### If you can't see things you expect, check that they arn't hidden!
+:::
+
+## QuPath toolbar: measurements table & scripting
+
+![](images/toolbar_meas_script.png){fig-alt="Inset of screenshot of QuPath application window (top left) showing the Measurement Table and Script Editor tools in red." fig-align="center"}
+
+- Measurement Table drop-down menu enables opening a table view of measurements associated with different object types
+- The Script Editor is used for automation and advanced tasks
+
+# Making & Managing Annotations
 
 ## Annotation tool keybindings
 
@@ -235,4 +284,37 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ![](images/QuPath_tools_menu.png){fig-alt="Inset of screenshot of QuPath  window (top left) showing annotation the Tools menu." fig-align="center"}
 
 ## Annotation tool preferences
+
+![](images/Pref_drawing_tools.png){fig-alt="Inset of screenshot of QuPath  Preferences dialog showing the settings for the drawing tools." fig-align="center"}
+
+## Annotation tool tips and tricks
+
+- Move tool:
+    - can toggle with `Spacebar`
+    - Double-click to *select* objects
+- For Ellipse & Rectangle can also use Objects ‣ Annotations… ‣ Specify annotation
+- Brush and Wand scale with zoom; they become more precise as you zoom in
+- Polyline (`v`) can be used like a brush by click-and-drag
+
+## Annotation tool tips and tricks
+
+- Annotations are editable, unless you lock them (Right-click ‣ Lock)
+- You can use the Brush or Wand tool to refine Polygons (or brushed regions)
+    - ensure that the Annotation is selected (yellow, by double-clicking with Move tool)
+    - start from the *inside* of the annotation, to expand it
+        - Note: if you want to make an Annotation *inside* another Annotation, you need to first lock it.
+    - hold `Alt/Option` and start from the *outside* to reduce it
+- Use `Shift` with the Brush or Wand to add to an Annotation (discontinous)
+
+## Analysis Pane: Annotation tab
+
+![](images/manage_annotations.png){fig-alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane in red." fig-align="center"}
+
+- Annotation list lets you select, delete
+    - Right-click to **lock** or edit properties (name, color)
+    - You can shift or control click to multi-select
+- Classification list lets you assign Annotations to classes
+
+## Annotation measurements
+
 
