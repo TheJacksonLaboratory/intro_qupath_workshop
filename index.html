@@ -382,8 +382,20 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <li><p>Extension ecosystem is relatively limited</p></li>
 </ul>
 </section>
-<section id="anatomy-of-a-qupath-project" class="slide level2">
-<h2>Anatomy of a QuPath <code>project</code></h2>
+<section id="getting-help" class="slide level2">
+<h2>Getting help</h2>
+<ul>
+<li>In-app documentation: Help menu</li>
+<li>Online documentation: <a href="https://qupath.readthedocs.io/en/stable/index.html">https://qupath.readthedocs.io/en/stable/index.html</a>
+<ul>
+<li>Includes tutorials, scripting, advanced concepts</li>
+</ul></li>
+<li>YouTube Channel: <a href="https://www.youtube.com/c/QuPath">https://www.youtube.com/c/QuPath</a></li>
+<li>Image.sc Forums: <a href="https://forum.image.sc/tag/qupath">https://forum.image.sc/tag/qupath</a></li>
+</ul>
+</section>
+<section id="key-concept-qupath-project" class="slide level2">
+<h2>Key concept: QuPath <code>project</code></h2>
 <ul>
 <li><code>projects</code> are the best way to organize your analysis work</li>
 <li><code>projects</code> are frequently required by some scripts/extensions</li>
@@ -394,9 +406,8 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 </ul></li>
 </ul>
 </section>
-<section id="anatomy-of-a-qupath-project-1" class="slide level2">
-<h2>Anatomy of a QuPath <code>project</code></h2>
-<h3 id="how-create-a-project">How create a project?</h3>
+<section id="how-create-a-project" class="slide level2">
+<h2>How create a project?</h2>
 <ul>
 <li><code>Create project</code> button</li>
 <li>File ‣ Project… ‣ Create project</li>
@@ -418,13 +429,12 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <li>Drag-and-drop an empty folder</li>
 </ul>
 </section>
-<section id="anatomy-of-a-qupath-project-2" class="slide level2">
+<section id="anatomy-of-a-qupath-project" class="slide level2">
 <h2>Anatomy of a QuPath <code>project</code></h2>
 
 <img data-src="images/project_folder.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot showing the contents of a QuPath project folder."></section>
-<section id="anatomy-of-a-qupath-project-3" class="slide level2">
-<h2>Anatomy of a QuPath <code>project</code></h2>
-<h3 id="how-to-add-images">How to add images?</h3>
+<section id="how-to-add-images-to-a-project" class="slide level2">
+<h2>How to add images to a project?</h2>
 <ul>
 <li>Drag and drop</li>
 <li>File ‣ Project… ‣ Add images</li>
@@ -449,9 +459,8 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <aside><div>
 <p>QuPath can handle large 2D images, e.g.&nbsp;whole-slide images—<em>there is no need to make tiles first</em></p>
 </div></aside></section>
-<section id="anatomy-of-a-qupath-project-4" class="slide level2">
-<h2>Anatomy of a QuPath <code>project</code></h2>
-<h3 id="qupath-will-never-edit-your-image-files">QuPath will never edit your image files!</h3>
+<section id="qupath-will-never-edit-your-image-files" class="slide level2">
+<h2>QuPath will never edit your image files!</h2>
 <ul>
 <li><code>images</code> in a <code>project</code> are actually QuPath objects holding metadata, annotations, etc.</li>
 <li>The image data/pixels are accessed from the files via an <code>ImageServer</code></li>
@@ -503,12 +512,316 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <img data-src="images/add_image_2.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of `Import images to project` dialog with `Choose files` button in red."></section>
 <section id="click-import" class="slide level2">
 <h2>Click <code>Import</code></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/add_image_3.png" class="quarto-figure quarto-figure-center" alt="Screenshot of `Import images to project` dialog."></p>
-</figure>
+
+<img data-src="images/add_image_3.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of `Import images to project` dialog."><h3 id="defaults-are-ok-for-the-majority-of-cases">Defaults are OK for the majority of cases</h3>
+</section>
+<section id="set-image-type" class="slide level2">
+<h2>Set Image type</h2>
+
+<img data-src="images/set_image_type.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of `Set image type` dialog."><div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<h3 id="defaults-are-ok-for-the-majority-of-cases">Defaults are OK for the majority of cases</h3>
+<p><strong>This affects the behavior of tools &amp; features!</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</section>
+<section id="qupath-project-with-an-image" class="slide level2">
+<h2><span class="emoji" data-emoji="tada">🎉</span> QuPath project with an image <span class="emoji" data-emoji="tada">🎉</span></h2>
+
+<img data-src="images/QuPath_main_window.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath application window with a single image in the `Analysis pane`."></section></section>
+<section>
+<section id="qupath-gui-layout" class="title-slide slide level1 center">
+<h1>QuPath GUI layout</h1>
+
+</section>
+<section id="analysis-pane-project-tab" class="slide level2">
+<h2>Analysis Pane: Project tab</h2>
+
+<img data-src="images/analysis_pane.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window with a single image in the `Analysis pane` Project tab."><h3 id="double-click-an-image-to-open-it-in-the-viewer-on-the-right">Double-click an image to open it in the <code>viewer</code> on the right</h3>
+</section>
+<section id="analysis-pane-project-tab-1" class="slide level2">
+<h2>Analysis Pane: Project tab</h2>
+<h3 id="right-click-on-images-to">Right-click on images to:</h3>
+<ul>
+<li>Rename, remove or duplicate
+<ul>
+<li>When you duplicate, can choose to also copy the QuPath object data files</li>
+</ul></li>
+<li>To add metadata or descriptions</li>
+<li>Blind/Mask samples: replace names with hashes</li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>These changes only affect the QuPath objects in this project, not your data files!</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</section>
+<section id="analysis-pane-image-tab" class="slide level2">
+<h2>Analysis Pane: Image tab</h2>
+
+<img data-src="images/analysis_pane_image.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window `Analysis pane` with CMU-1.svs image open."></section>
+<section id="analysis-pane-image-tab-1" class="slide level2">
+<h2>Analysis Pane: Image tab</h2>
+<ul>
+<li>Name and location of the image file</li>
+<li>Pixel width/height: scale calibration, <strong>very important</strong>
+<ul>
+<li>can set yourself using a <code>Line</code> annotation</li>
+</ul></li>
+<li>Server type: how QuPath is reading the raw image file, set at import</li>
+<li>Pyramid: levels of downsampling for performance</li>
+<li>Image type: determines some default functions, e.g.&nbsp;channel information</li>
+</ul>
+</section>
+<section id="qupath-viewer" class="slide level2">
+<h2>QuPath viewer</h2>
+
+<img data-src="images/qupath_viewer.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath application window with elements of the viewer highlighted in red."><ul>
+<li>Minimap: Image overview, allows for quick navigation</li>
+<li>Info bar: gives Pixel coordinate and value</li>
+<li>Right-click the viewer to close or make a grid</li>
+</ul>
+</section></section>
+<section>
+<section id="qupath-toolbar" class="title-slide slide level1 center">
+<h1>QuPath toolbar</h1>
+
+</section>
+<section id="qupath-toolbar-1" class="slide level2">
+<h2>QuPath toolbar</h2>
+
+<img data-src="images/QuPath_toolbar.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath application window with the toolbar marked in red."></section>
+<section id="qupath-toolbar-information" class="slide level2">
+<h2>QuPath toolbar: information</h2>
+
+<img data-src="images/QuPath_info_tools.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath application window with the Prefereces, Log, and Interactive Help tools marked in red."></section>
+<section id="qupath-toolbar-information-1" class="slide level2">
+<h2>QuPath toolbar: information</h2>
+<ul>
+<li>Preferences: settings that customize QuPath behavior, including look-and-feel, extensions, etc.</li>
+<li>Log: message logger, showing Info, Warnings, and Errors—helpful when troubleshooting or asking for help
+<ul>
+<li><code>Dot</code> notifies of un-read Errors</li>
+</ul></li>
+<li><strong><em>Interactive Help</em></strong>: Provides contextual help based on state of application/viewer, what you mouse over, etc.
+<ul>
+<li><code>Dot</code> notifies for potential problems, will offer solutions</li>
+</ul></li>
+</ul>
+</section>
+<section id="qupath-toolbar-annotation-tools" class="slide level2">
+<h2>QuPath toolbar: Annotation tools</h2>
+
+<img data-src="images/QuPath_annotation_tools_1.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window (top left) showing annotation tools in red."><ul>
+<li><strong>+</strong> : Move tool: pan around the image or move objects</li>
+<li>For the Polygon tool: double-click to end</li>
+<li>Magic wand: context-aware brush that takes into account intensity &amp; zoom</li>
+<li>For Brush &amp; Wand tool, <code>Alt/Option</code> key enables subtract mode</li>
+<li><strong>S</strong> : Switch to selection mode, where tools <em>select</em> objects instead</li>
+</ul>
+</section>
+<section id="qupath-toolbar-brightness-contrast-zoom" class="slide level2">
+<h2>QuPath toolbar: brightness &amp; contrast, zoom</h2>
+
+<img data-src="images/toolbar_BC_zoom.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window (top left) showing B&amp;C and Zoom tools in red."><ul>
+<li>Brightness &amp; contrast dialog also allows for control of channels and colormaps</li>
+<li>Can manually specify a zoom level by double-click</li>
+<li>Zoom button resets zoom to fit whole image in viewer</li>
+</ul>
+</section>
+<section id="qupath-toolbar-showhide-fill-opacity" class="slide level2">
+<h2>QuPath toolbar: show/hide &amp; fill, opacity</h2>
+
+<img data-src="images/toolbar_show_hide.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window (top left) showing Annotation and Detection Show/Hide tools in red."><ul>
+<li>Enable showing Annotations or Detections, plus whether they are filled</li>
+<li><code>C</code>: show/hides pixel classification overlay</li>
+<li>Slider controls opacity, so you can see through to the data beneath</li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>If you can’t see things you expect, check that they arn’t hidden!</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</section>
+<section id="qupath-toolbar-measurements-table-scripting" class="slide level2">
+<h2>QuPath toolbar: measurements table &amp; scripting</h2>
+
+<img data-src="images/toolbar_meas_script.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window (top left) showing the Measurement Table and Script Editor tools in red."><ul>
+<li>Measurement Table drop-down menu enables opening a table view of measurements associated with different object types</li>
+<li>The Script Editor is used for automation and advanced tasks</li>
+</ul>
+</section></section>
+<section>
+<section id="making-managing-annotations" class="title-slide slide level1 center">
+<h1>Making &amp; Managing Annotations</h1>
+
+</section>
+<section id="annotation-tool-keybindings" class="slide level2">
+<h2>Annotation tool keybindings</h2>
+<ul>
+<li>Tools are also accessible in the <code>Tools</code> menu, which shows the shortcuts</li>
+</ul>
+
+<img data-src="images/QuPath_tools_menu.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath  window (top left) showing annotation the Tools menu."></section>
+<section id="annotation-tool-preferences" class="slide level2">
+<h2>Annotation tool preferences</h2>
+
+<img data-src="images/Pref_drawing_tools.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath  Preferences dialog showing the settings for the drawing tools."></section>
+<section id="annotation-tool-tips-and-tricks" class="slide level2">
+<h2>Annotation tool tips and tricks</h2>
+<ul>
+<li>Move tool:
+<ul>
+<li>can toggle with <code>Spacebar</code></li>
+<li>Double-click to <em>select</em> objects</li>
+</ul></li>
+<li>For Ellipse &amp; Rectangle can also use Objects ‣ Annotations… ‣ Specify annotation</li>
+<li>Brush and Wand scale with zoom; they become more precise as you zoom in</li>
+<li>Polyline (<code>v</code>) can be used like a brush by click-and-drag</li>
+</ul>
+</section>
+<section id="annotation-tool-tips-and-tricks-1" class="slide level2">
+<h2>Annotation tool tips and tricks</h2>
+<ul>
+<li>Annotations are editable, unless you lock them (Right-click ‣ Lock)</li>
+<li>You can use the Brush or Wand tool to refine Polygons (or brushed regions)
+<ul>
+<li>ensure that the Annotation is selected (yellow, by double-clicking with Move tool)</li>
+<li>start from the <em>inside</em> of the annotation, to expand it
+<ul>
+<li>Note: if you want to make an Annotation <em>inside</em> another Annotation, you need to first lock it.</li>
+</ul></li>
+<li>hold <code>Alt/Option</code> and start from the <em>outside</em> to reduce it</li>
+</ul></li>
+<li>Use <code>Shift</code> with the Brush or Wand to add to an Annotation (discontinous)</li>
+</ul>
+</section>
+<section id="analysis-pane-annotation-tab" class="slide level2">
+<h2>Analysis Pane: Annotation tab</h2>
+
+<img data-src="images/manage_annotations.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane in red."><ul>
+<li>Annotation list lets you select, delete
+<ul>
+<li>Right-click to <strong>lock</strong> or edit properties (name, color)</li>
+<li>You can shift or control click to multi-select</li>
+</ul></li>
+<li>Classification list lets you assign Annotations to <code>classes</code></li>
+</ul>
+</section>
+<section id="analysis-pane-annotation-tab-classes" class="slide level2">
+<h2>Analysis Pane: Annotation tab: Classes</h2>
+
+<img data-src="images/annotations_classes_menu.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane with the Classes submenu shown in red."><ul>
+<li>Classes group objects in a more powerful way than names</li>
+<li>You can add your own classes or remove existing ones
+<ul>
+<li>Note: <code>Populate</code> commands refer to the <strong>class list</strong></li>
+</ul></li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Majority of QuPath functions rely on using Classes</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</section>
+<section id="analysis-pane-annotations-tab-set-and-autoset" class="slide level2">
+<h2>Analysis Pane: Annotations tab: Set and autoset</h2>
+
+<img data-src="images/annotations_classes_set.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane with the `Set selected` and `Auto set` buttons shown in red."><ul>
+<li><code>Set selected</code> assigns all selected Annotations to a selected class</li>
+<li><code>Auto set</code> assigns all new Annotations (regardless of type) to the selected class</li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Classes with a <code>*</code> are ignored in measurements, percentages, etc.</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</section>
+<section id="analysis-pane-annotation-measurements" class="slide level2">
+<h2>Analysis Pane: Annotation measurements</h2>
+
+<img data-src="images/Annotation_measurements_1.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath  application showing the Annotations measurements pane of the Annotations tab of the Analysis Pane."><ul>
+<li>Annotations have basic Measurements that depend on their type (length, area, perimeter, etc.)</li>
+</ul>
+</section>
+<section id="annotation-measurements-measurement-tables" class="slide level2">
+<h2>Annotation measurements: measurement tables</h2>
+
+<img data-src="images/toolbar_meas_script.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window (top left) showing the Measurement Table and Script Editor tools in red."><ul>
+<li>You can generate a table using the <code>Show measurements table</code> Toolbar button</li>
+</ul>
+</section>
+<section id="analysis-pane-hierarchy-tab" class="slide level2">
+<h2>Analysis Pane: Hierarchy tab</h2>
+<ul>
+<li>Presents the relationship between objects:
+<ul>
+<li>Parent &gt; Child</li>
+</ul></li>
+<li>If you have Annotations within an Annotation, you can use:
+<ul>
+<li>Objects ‣ Annotations… ‣ Resolve hierarchy
+<ul>
+<li>QuPath will attempt to place all child objects with parent objects</li>
+</ul></li>
+<li>Objects ‣ Annotations… ‣ Insert into hierarchy
+<ul>
+<li>QuPath will insert the selected objects into the hierarchy</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>For Annotations, the entire area of a child must be inside the parent</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="images/JAX_logo_rgb_transparentback.png" class="slide-logo"></p>
 <div class="footer footer-default">
