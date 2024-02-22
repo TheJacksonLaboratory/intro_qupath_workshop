@@ -425,6 +425,8 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ![](images/brightness_contrast.png){fig-alt="Screenshot of QuPath `Brightness & Contrast` dialog with red arrows indicating the handles of the stain vectors, as well as the Auto button and the `exclude unrecognized stains` checkbox." fig-align="center"}
 
+- Want visual separation between stains and low residual
+
 # Automated Annotations via Thresholding
 
 ## Thresholding in QuPath
@@ -473,3 +475,23 @@ You need to save your thresholder before you can use it!
 - Classify: assigns Detections to the classes
 
 ## Thresholder: Create objects
+
+![](images/Pixel_classifier_choose_parents.png){fig-alt="Screenshot of QuPath `Pixel classifier` dialog showing `Full image`." fig-align="center"}
+
+- Choose the parent of the new objects, generally for Tissue you want it to be the image
+
+## Thresholder: Create objects
+
+![](images/Pixel_classifier_choose_parents.png){fig-alt="Screenshot of QuPath `Create objects` dialog." fig-align="center"}
+
+We are segmenting 4 large tissue slices, so we want to make:
+- Annotations, that are large, without holes
+- Separate objects (of the same class) for each slice
+
+## Thresholder: Load classifier to reuse
+
+We saved our classifier (thresholder), so we can re-use it:
+
+![](images/load_pixel_classifier_menu.png){fig-alt="Screenshot of QuPath `Classify` menu showinf the `Load classifier` dialog." fig-align="center"}
+
+![](images/load_pixel_classifier.png){fig-alt="Screenshot of QuPath `Load pixel classifier` dialog." fig-align="center"}
