@@ -193,7 +193,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ![](images/analysis_pane.png){fig-alt="Inset of screenshot of QuPath application window with a single image in the `Analysis pane` Project tab." fig-align="center"}
 
-### Double-click an image to open it in the `viewer` on the right
+### Double-click an image to open it in the `viewer` on the right -- it will be bolded in the list
 
 ## Analysis Pane: Project tab
 
@@ -370,6 +370,106 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 - Objects ‣ Annotations… ‣ Insert into hierarchy
     - QuPath will insert **the selected** objects into the hierarchy
 
+# Setting stain vectors
 
+## Start with a clean copy
 
+- Let's start by duplicating our image:
+    - Analysis Pane ‣ Projects tab
+    - Right-click the image and select `Duplicate`
+    - **Un-check** `Also duplicate data files`
 
+![](images/duplicate_image_no_data.png){fig-alt="Screenshot of QuPath `Duplicate image` dialog, with `Also duplicate data files` in red." fig-align="center"}
+
+## Stain separation/deconvolution
+
+- Aims to extract information about individual chromogenic stains from the RGB values of each pixel
+- e.g. convert (R, G, B) to (H, E, residual)
+
+:::{.callout-note}
+### For fluorescence images, single channels are typically collected, so this isn't needed.
+:::
+
+- When you select `image type` on import, default separation is performed
+
+## Setting stain vectors
+
+- Use Annotation tools to make a small Annotation that includes:
+    - some background
+    - some pixels of each stain
+- Analyze ‣ Estimate stain vectors
+
+![](images/Analyze_stain_vectors.png){fig-alt="Screenshot of QuPath Analyze menu with `Estimate stain vectors` highlighted in blue." fig-align="center"}
+
+## Estimate stain vectors
+
+![](images/Est_stain_vec_modal.png){fig-alt="Screenshot of QuPath `Estimate stain vectors` dialog`." fig-align="center"}
+
+- QuPath has detected that the most common pixel value (the mode) is different from the current background
+- Click `Yes` to set the new value
+
+## Visual stain editor
+
+![](images/visual_stain_editor.png){fig-alt="Screenshot of QuPath `Visual stain editor` dialog with red arrows indicating the handles of the stain vectors, as well as the Auto button and the `exclude unrecognized stains` checkbox." fig-align="center"}
+
+## Visual stain editor
+
+- At the bottom are settings for `Auto` vector estimation
+- Click `Auto` to get an intial estimate
+- Look at the color panels, which are views at the 3D colorspace from orthogonal sides
+    - if you have other pixels, can try to exclude them (checkbox) and run Auto again
+- want the vectors to encompass the reddish-pink-purple pixels (those of H&E)
+- Can manually tweak the vectors by using the handles
+
+## Checking the results: Brightness & Contrast
+
+![](images/brightness_contrast.png){fig-alt="Screenshot of QuPath `Brightness & Contrast` dialog with red arrows indicating the handles of the stain vectors, as well as the Auto button and the `exclude unrecognized stains` checkbox." fig-align="center"}
+
+# Automated Annotations via Thresholding
+
+## Thresholding in QuPath
+
+- Thresholding is a type of `Pixel Classification`
+    - Is a given pixel above or below a certain numeric value?
+    - Assign it to a Class
+- Most commonly used to create Annotations, e.g. Tissue vs. background
+- Menu: Classify ‣ Pixel classification ‣ Create thresholder
+
+![](images/classify_thresholder.png){fig-alt="Screenshot of QuPath menus: Classify > Pixel classification, with `Create thresholder` highlighted in blue." fig-align="center"}
+
+## Pixel classification ‣ Create thresholder
+
+![](images/Classify_create_thresholder.png){fig-alt="Screenshot of QuPath `Create thresholder` dialog highlighted in blue." fig-align="center"}
+
+## Thresholder parameters
+
+- Resolution: lower resolution is less computationally intensive, but loses details
+- Channel: channel(s) to compare vs. threshold
+    - for RGB images or tissue detection,  `Average channels` can be a good choice
+- Prefilter: preprocessing to apply prior to thresholding
+    - Gaussian is typical, to smooth out noise
+- Smoothing sigma: radius of prefilter, in pixels
+
+## Thresholder parameters
+
+- **Threshold**: numeric value that will be used
+
+:::{.callout-note}
+- For RGB, white is (255, 255, 255) and black is (0, 0, 0)
+- For intensity channels (e.g. stains), 0 is background and higher values represent signal
+:::
+
+- Above threshold: the class that these pixels will be assigned to
+- Below threshold: the class that these pixels will be assigned to
+
+## Thresholder post-processing
+
+:::{.callout-important}
+You need to save your thresholder before you can use it!
+:::
+
+- Measure: requires existing Annotations, gives areas and % of classes
+- **Create objects**: creates objects and assigns them to the classes
+- Classify: assigns Detections to the classes
+
+## Thresholder: Create objects
