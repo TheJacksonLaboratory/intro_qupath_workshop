@@ -53,6 +53,12 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 - currently developed by [Pete Bankhead's group at The University of Edinburgh](https://www.ed.ac.uk/pathology/people/staff-students/peter-bankhead)
 - \>7500 publications [using QuPath](https://scholar.google.com/scholar?start=0&q=qupath)
 
+:::{.callout-important}
+### If you use it, cite it! 
+[https://qupath.readthedocs.io/en/stable/docs/intro/citing.html](https://qupath.readthedocs.io/en/stable/docs/intro/citing.html)
+:::
+
+
 ## Strengths of QuPath
 
 - Was designed for very large, multiscale 2D files
@@ -100,7 +106,7 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 - File ‣ Project… ‣ Create project
 
 :::{.callout-important}
-**When making a project, remember to ceate a folder for it!**
+**When making a project, remember to create a folder for it!**
 :::
 
 - Drag-and-drop an empty folder
@@ -172,7 +178,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ![](images/set_image_type.png){fig-alt="Screenshot of `Set image type` dialog." fig-align="center"}
 
 :::{.callout-important}
-### This affects the behavior of tools & features!
+### This affects the behavior of tools & features! (but you can change it)
 :::
 
 ## :tada: QuPath project with an image :tada:
@@ -289,8 +295,8 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ## Annotation tool tips and tricks
 
-- Move tool:
-    - can toggle with `Spacebar`
+- Annotations are editable, unless you lock them (Right-click ‣ Lock)
+- Move tool can be toggled with `Spacebar`
     - Double-click to *select* objects
 - For Ellipse & Rectangle can also use Objects ‣ Annotations… ‣ Specify annotation
 - Brush and Wand scale with zoom; they become more precise as you zoom in
@@ -298,8 +304,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ## Annotation tool tips and tricks
 
-- Annotations are editable, unless you lock them (Right-click ‣ Lock)
-- You can use the Brush or Wand tool to refine Polygons (or brushed regions)
+- You can use the Brush or Wand tool to refine regions
     - ensure that the Annotation is selected (yellow, by double-clicking with Move tool)
     - start from the *inside* of the annotation, to expand it
         - Note: if you want to make an Annotation *inside* another Annotation, you need to first lock it.
@@ -317,7 +322,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ## Analysis Pane: Annotation tab: Classes
 
-![](images/annotations_classes_menu.png){fig-alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane with the Classes submenu shown in red." fig-align="center"}
+![](images/annotations_classes_submenu.png){fig-alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane with the Classes submenu shown in red." fig-align="center"}
 
 - Classes group objects in a more powerful way than names
 - You can add your own classes or remove existing ones
@@ -353,13 +358,16 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ## Analysis Pane: Hierarchy tab
 
 - Presents the relationship between objects:
-    - Parent > Child
-- If you have Annotations within an Annotation, you can use:
-    - Objects ‣ Annotations… ‣ Resolve hierarchy 
-        - QuPath will attempt to place all child objects with parent objects 
-    - Objects ‣ Annotations… ‣ Insert into hierarchy
-        - QuPath will insert the selected objects into the hierarchy
-
+    - Parent ‣ Child
+    
 :::{.callout-important}
 ### For Annotations, the entire area of a child must be inside the parent
 :::
+
+- Objects ‣ Annotations… ‣ Resolve hierarchy 
+    - QuPath will place **all** child objects with parent objects 
+- Objects ‣ Annotations… ‣ Insert into hierarchy
+    - QuPath will insert **the selected** objects into the hierarchy
+
+# Automated Annotations via Thresholding
+
