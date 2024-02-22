@@ -914,7 +914,10 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <section id="checking-the-results-brightness-contrast" class="slide level2">
 <h2>Checking the results: Brightness &amp; Contrast</h2>
 
-<img data-src="images/brightness_contrast.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Brightness &amp; Contrast` dialog with red arrows indicating the handles of the stain vectors, as well as the Auto button and the `exclude unrecognized stains` checkbox."></section></section>
+<img data-src="images/brightness_contrast.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Brightness &amp; Contrast` dialog with red arrows indicating the handles of the stain vectors, as well as the Auto button and the `exclude unrecognized stains` checkbox."><ul>
+<li>Want visual separation between stains and low residual</li>
+</ul>
+</section></section>
 <section>
 <section id="automated-annotations-via-thresholding" class="title-slide slide level1 center">
 <h1>Automated Annotations via Thresholding</h1>
@@ -1001,6 +1004,29 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 </section>
 <section id="thresholder-create-objects" class="slide level2">
 <h2>Thresholder: Create objects</h2>
+
+<img data-src="images/Pixel_classifier_choose_parents.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Pixel classifier` dialog showing `Full image`."><ul>
+<li>Choose the parent of the new objects, generally for Tissue you want it to be the image</li>
+</ul>
+</section>
+<section id="thresholder-create-objects-1" class="slide level2">
+<h2>Thresholder: Create objects</h2>
+
+<img data-src="images/Pixel_classifier_choose_parents.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Create objects` dialog."><p>We are segmenting 4 large tissue slices, so we want to make: - Annotations, that are large, without holes - Separate objects (of the same class) for each slice</p>
+</section>
+<section id="thresholder-load-classifier-to-reuse" class="slide level2">
+<h2>Thresholder: Load classifier to reuse</h2>
+<p>We saved our classifier (thresholder), so we can re-use it:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/load_pixel_classifier_menu.png" class="quarto-figure quarto-figure-center" alt="Screenshot of QuPath `Classify` menu showinf the `Load classifier` dialog."></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/load_pixel_classifier.png" class="quarto-figure quarto-figure-center" alt="Screenshot of QuPath `Load pixel classifier` dialog."></p>
+</figure>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="images/JAX_logo_rgb_transparentback.png" class="slide-logo"></p>
 <div class="footer footer-default">
