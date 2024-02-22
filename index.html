@@ -358,6 +358,19 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <li>currently developed by <a href="https://www.ed.ac.uk/pathology/people/staff-students/peter-bankhead">Pete Bankhead’s group at The University of Edinburgh</a></li>
 <li>&gt;7500 publications <a href="https://scholar.google.com/scholar?start=0&amp;q=qupath">using QuPath</a></li>
 </ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>If you use it, cite it!</strong></p>
+</div>
+<div class="callout-content">
+<p><a href="https://qupath.readthedocs.io/en/stable/docs/intro/citing.html">https://qupath.readthedocs.io/en/stable/docs/intro/citing.html</a></p>
+</div>
+</div>
+</div>
 </section>
 <section id="strengths-of-qupath" class="slide level2">
 <h2>Strengths of QuPath</h2>
@@ -374,12 +387,13 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <section id="limitations" class="slide level2">
 <h2>Limitations</h2>
 <ul>
-<li><p>Limited <em>3D viewing</em> capabilities:</p>
+<li><p>Limited <em>3D &amp; time series viewing</em> capabilities:</p>
 <ul>
 <li>single planes only</li>
 </ul></li>
 <li><p>Some complex functions require scripting</p></li>
 <li><p>Extension ecosystem is relatively limited</p></li>
+<li><p>No support for zarr/NGFF</p></li>
 </ul>
 </section>
 <section id="getting-help" class="slide level2">
@@ -421,7 +435,7 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>When making a project, remember to ceate a folder for it!</strong></p>
+<p><strong>When making a project, remember to create a folder for it!</strong></p>
 </div>
 </div>
 </div>
@@ -524,7 +538,7 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>This affects the behavior of tools &amp; features!</strong></p>
+<p><strong>This affects the behavior of tools &amp; features! (but you can change it)</strong></p>
 </div>
 <div class="callout-content">
 
@@ -544,7 +558,7 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <section id="analysis-pane-project-tab" class="slide level2">
 <h2>Analysis Pane: Project tab</h2>
 
-<img data-src="images/analysis_pane.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window with a single image in the `Analysis pane` Project tab."><h3 id="double-click-an-image-to-open-it-in-the-viewer-on-the-right">Double-click an image to open it in the <code>viewer</code> on the right</h3>
+<img data-src="images/analysis_pane.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window with a single image in the `Analysis pane` Project tab."><h3 id="double-click-an-image-to-open-it-in-the-viewer-on-the-right-it-will-be-bolded-in-the-list">Double-click an image to open it in the <code>viewer</code> on the right – it will be bolded in the list</h3>
 </section>
 <section id="analysis-pane-project-tab-1" class="slide level2">
 <h2>Analysis Pane: Project tab</h2>
@@ -693,23 +707,21 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <section id="annotation-tool-tips-and-tricks" class="slide level2">
 <h2>Annotation tool tips and tricks</h2>
 <ul>
-<li>Move tool:
+<li>Annotations are editable, unless you lock them (Right-click ‣ Lock)</li>
+<li>Move tool can be toggled with <code>Spacebar</code>
 <ul>
-<li>can toggle with <code>Spacebar</code></li>
 <li>Double-click to <em>select</em> objects</li>
 </ul></li>
 <li>For Ellipse &amp; Rectangle can also use Objects ‣ Annotations… ‣ Specify annotation</li>
+<li>To start fresh: Objects ‣ Delete… ‣ Delete all annotations</li>
 <li>Brush and Wand scale with zoom; they become more precise as you zoom in</li>
-<li>Polyline (<code>v</code>) can be used like a brush by click-and-drag</li>
 </ul>
 </section>
 <section id="annotation-tool-tips-and-tricks-1" class="slide level2">
 <h2>Annotation tool tips and tricks</h2>
 <ul>
-<li>Annotations are editable, unless you lock them (Right-click ‣ Lock)</li>
-<li>You can use the Brush or Wand tool to refine Polygons (or brushed regions)
+<li>You can use the Brush or Wand tool to refine selected Annotations
 <ul>
-<li>ensure that the Annotation is selected (yellow, by double-clicking with Move tool)</li>
 <li>start from the <em>inside</em> of the annotation, to expand it
 <ul>
 <li>Note: if you want to make an Annotation <em>inside</em> another Annotation, you need to first lock it.</li>
@@ -734,7 +746,7 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <section id="analysis-pane-annotation-tab-classes" class="slide level2">
 <h2>Analysis Pane: Annotation tab: Classes</h2>
 
-<img data-src="images/annotations_classes_menu.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane with the Classes submenu shown in red."><ul>
+<img data-src="images/annotations_classes_submenu.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane with the Classes submenu shown in red."><ul>
 <li>Classes group objects in a more powerful way than names</li>
 <li>You can add your own classes or remove existing ones
 <ul>
@@ -795,18 +807,7 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <ul>
 <li>Presents the relationship between objects:
 <ul>
-<li>Parent &gt; Child</li>
-</ul></li>
-<li>If you have Annotations within an Annotation, you can use:
-<ul>
-<li>Objects ‣ Annotations… ‣ Resolve hierarchy
-<ul>
-<li>QuPath will attempt to place all child objects with parent objects</li>
-</ul></li>
-<li>Objects ‣ Annotations… ‣ Insert into hierarchy
-<ul>
-<li>QuPath will insert the selected objects into the hierarchy</li>
-</ul></li>
+<li>Parent ‣ Child</li>
 </ul></li>
 </ul>
 <div class="callout callout-important callout-titled callout-style-default">
@@ -822,6 +823,184 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 </div>
 </div>
 </div>
+<ul>
+<li>Objects ‣ Annotations… ‣ Resolve hierarchy
+<ul>
+<li>QuPath will place <strong>all</strong> child objects with parent objects</li>
+</ul></li>
+<li>Objects ‣ Annotations… ‣ Insert into hierarchy
+<ul>
+<li>QuPath will insert <strong>the selected</strong> objects into the hierarchy</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="setting-stain-vectors" class="title-slide slide level1 center">
+<h1>Setting stain vectors</h1>
+
+</section>
+<section id="start-with-a-clean-copy" class="slide level2">
+<h2>Start with a clean copy</h2>
+<ul>
+<li>Let’s start by duplicating our image:
+<ul>
+<li>Analysis Pane ‣ Projects tab</li>
+<li>Right-click the image and select <code>Duplicate</code></li>
+<li><strong>Un-check</strong> <code>Also duplicate data files</code></li>
+</ul></li>
+</ul>
+
+<img data-src="images/duplicate_image_no_data.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Duplicate image` dialog, with `Also duplicate data files` in red."></section>
+<section id="stain-separationdeconvolution" class="slide level2">
+<h2>Stain separation/deconvolution</h2>
+<ul>
+<li>Aims to extract information about individual chromogenic stains from the RGB values of each pixel</li>
+<li>e.g.&nbsp;convert (R, G, B) to (H, E, residual)</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>For fluorescence images, single channels are typically collected, so this isn’t needed.</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<ul>
+<li>When you select <code>image type</code> on import, default separation is performed</li>
+</ul>
+</section>
+<section id="setting-stain-vectors-1" class="slide level2">
+<h2>Setting stain vectors</h2>
+<ul>
+<li>Use Annotation tools to make a small Annotation that includes:
+<ul>
+<li>some background</li>
+<li>some pixels of each stain</li>
+</ul></li>
+<li>Analyze ‣ Estimate stain vectors</li>
+</ul>
+
+<img data-src="images/Analyze_stain_vectors.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath Analyze menu with `Estimate stain vectors` highlighted in blue."></section>
+<section id="estimate-stain-vectors" class="slide level2">
+<h2>Estimate stain vectors</h2>
+
+<img data-src="images/Est_stain_vec_modal.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Estimate stain vectors` dialog`."><ul>
+<li>QuPath has detected that the most common pixel value (the mode) is different from the current background</li>
+<li>Click <code>Yes</code> to set the new value</li>
+</ul>
+</section>
+<section id="visual-stain-editor" class="slide level2">
+<h2>Visual stain editor</h2>
+
+<img data-src="images/visual_stain_editor.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Visual stain editor` dialog with red arrows indicating the handles of the stain vectors, as well as the Auto button and the `exclude unrecognized stains` checkbox."></section>
+<section id="visual-stain-editor-1" class="slide level2">
+<h2>Visual stain editor</h2>
+<ul>
+<li>At the bottom are settings for <code>Auto</code> vector estimation</li>
+<li>Click <code>Auto</code> to get an intial estimate</li>
+<li>Look at the color panels, which are views at the 3D colorspace from orthogonal sides
+<ul>
+<li>if you have other pixels, can try to exclude them (checkbox) and run Auto again</li>
+</ul></li>
+<li>want the vectors to encompass the reddish-pink-purple pixels (those of H&amp;E)</li>
+<li>Can manually tweak the vectors by using the handles</li>
+</ul>
+</section>
+<section id="checking-the-results-brightness-contrast" class="slide level2">
+<h2>Checking the results: Brightness &amp; Contrast</h2>
+
+<img data-src="images/brightness_contrast.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Brightness &amp; Contrast` dialog with red arrows indicating the handles of the stain vectors, as well as the Auto button and the `exclude unrecognized stains` checkbox."></section></section>
+<section>
+<section id="automated-annotations-via-thresholding" class="title-slide slide level1 center">
+<h1>Automated Annotations via Thresholding</h1>
+
+</section>
+<section id="thresholding-in-qupath" class="slide level2">
+<h2>Thresholding in QuPath</h2>
+<ul>
+<li>Thresholding is a type of <code>Pixel Classification</code>
+<ul>
+<li>Is a given pixel above or below a certain numeric value?</li>
+<li>Assign it to a Class</li>
+</ul></li>
+<li>Most commonly used to create Annotations, e.g.&nbsp;Tissue vs.&nbsp;background</li>
+<li>Menu: Classify ‣ Pixel classification ‣ Create thresholder</li>
+</ul>
+
+<img data-src="images/classify_thresholder.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath menus: Classify > Pixel classification, with `Create thresholder` highlighted in blue."></section>
+<section id="pixel-classification-create-thresholder" class="slide level2">
+<h2>Pixel classification ‣ Create thresholder</h2>
+
+<img data-src="images/Classify_create_thresholder.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Create thresholder` dialog highlighted in blue."></section>
+<section id="thresholder-parameters" class="slide level2">
+<h2>Thresholder parameters</h2>
+<ul>
+<li>Resolution: lower resolution is less computationally intensive, but loses details</li>
+<li>Channel: channel(s) to compare vs.&nbsp;threshold
+<ul>
+<li>for RGB images or tissue detection, <code>Average channels</code> can be a good choice</li>
+</ul></li>
+<li>Prefilter: preprocessing to apply prior to thresholding
+<ul>
+<li>Gaussian is typical, to smooth out noise</li>
+</ul></li>
+<li>Smoothing sigma: radius of prefilter, in pixels</li>
+</ul>
+</section>
+<section id="thresholder-parameters-1" class="slide level2">
+<h2>Thresholder parameters</h2>
+<ul>
+<li><strong>Threshold</strong>: numeric value that will be used</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>For RGB, white is (255, 255, 255) and black is (0, 0, 0)</li>
+<li>For intensity channels (e.g.&nbsp;stains), 0 is background and higher values represent signal</li>
+</ul>
+</div>
+</div>
+</div>
+<ul>
+<li>Above threshold: the class that these pixels will be assigned to</li>
+<li>Below threshold: the class that these pixels will be assigned to</li>
+</ul>
+</section>
+<section id="thresholder-post-processing" class="slide level2">
+<h2>Thresholder post-processing</h2>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>You need to save your thresholder before you can use it!</p>
+</div>
+</div>
+</div>
+<ul>
+<li>Measure: requires existing Annotations, gives areas and % of classes</li>
+<li><strong>Create objects</strong>: creates objects and assigns them to the classes</li>
+<li>Classify: assigns Detections to the classes</li>
+</ul>
+</section>
+<section id="thresholder-create-objects" class="slide level2">
+<h2>Thresholder: Create objects</h2>
 <div class="quarto-auto-generated-content">
 <p><img src="images/JAX_logo_rgb_transparentback.png" class="slide-logo"></p>
 <div class="footer footer-default">
