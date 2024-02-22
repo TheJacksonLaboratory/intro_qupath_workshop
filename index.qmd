@@ -77,12 +77,14 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 
 ## Limitations
 
-- Limited *3D viewing* capabilities:
+- Limited *3D & time series viewing* capabilities:
     - single planes only
 
 - Some complex functions require scripting
 
 - Extension ecosystem is relatively limited
+
+- No support for zarr/NGFF
 
 ## Getting help
 
@@ -299,13 +301,12 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 - Move tool can be toggled with `Spacebar`
     - Double-click to *select* objects
 - For Ellipse & Rectangle can also use Objects ‣ Annotations… ‣ Specify annotation
+- To start fresh: Objects ‣ Delete… ‣ Delete all annotations
 - Brush and Wand scale with zoom; they become more precise as you zoom in
-- Polyline (`v`) can be used like a brush by click-and-drag
 
 ## Annotation tool tips and tricks
 
-- You can use the Brush or Wand tool to refine regions
-    - ensure that the Annotation is selected (yellow, by double-clicking with Move tool)
+- You can use the Brush or Wand tool to refine selected Annotations
     - start from the *inside* of the annotation, to expand it
         - Note: if you want to make an Annotation *inside* another Annotation, you need to first lock it.
     - hold `Alt/Option` and start from the *outside* to reduce it
@@ -369,5 +370,6 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 - Objects ‣ Annotations… ‣ Insert into hierarchy
     - QuPath will insert **the selected** objects into the hierarchy
 
-# Automated Annotations via Thresholding
+
+
 
