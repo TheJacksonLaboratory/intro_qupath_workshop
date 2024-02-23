@@ -111,7 +111,7 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 ### When making a project, remember to create a folder for it!
 :::
 
-- Drag-and-drop an empty folder
+- Drag-and-drop an **empty** folder
 
 ## Anatomy of a QuPath `project`
 
@@ -240,6 +240,8 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ## QuPath toolbar: information
 
+![](images/toolbar_info_tools_inset.png){fig-alt="Inset of screenshot of QuPath application window with the Preferences, Log, and Interactive Help tools marked in red." fig-align="center"}
+
 - Preferences: settings that customize QuPath behavior, including look-and-feel, extensions, etc.
 - Log: message logger, showing Info, Warnings, and Errors—helpful when troubleshooting or asking for help
     - `Dot` notifies of un-read Errors
@@ -251,7 +253,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ![](images/QuPath_annotation_tools_1.png){fig-alt="Inset of screenshot of QuPath application window (top left) showing annotation tools in red." fig-align="center"}
 
 - **+** : Move tool: pan around the image or move objects
-- For the Polygon tool: double-click to end
+- For the Polyline tool: double-click to end
 - Magic wand: context-aware brush that takes into account intensity & zoom
 - For Brush & Wand tool, `Alt/Option` key enables subtract mode
 - **S** : Switch to selection mode, where tools *select* objects instead
