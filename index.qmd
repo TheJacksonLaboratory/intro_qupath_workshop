@@ -108,7 +108,7 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 - File ‣ Project… ‣ Create project
 
 :::{.callout-important}
-**When making a project, remember to create a folder for it!**
+### When making a project, remember to create a folder for it!
 :::
 
 - Drag-and-drop an empty folder
@@ -122,7 +122,7 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 - Drag and drop
 - File ‣ Project… ‣ Add images
 
-:::{.callout-note}
+:::{.callout-important}
 #### image files will not be copied into your `project` folder!
 - A link (`URI`) will be used! 
 - If you move the file(s) you will be prompted to update the link.
@@ -179,7 +179,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ![](images/set_image_type.png){fig-alt="Screenshot of `Set image type` dialog." fig-align="center"}
 
-:::{.callout-important}
+:::{.callout-note}
 ### This affects the behavior of tools & features! (but you can change it)
 :::
 
@@ -272,7 +272,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 - `C`: show/hides pixel classification overlay
 - Slider controls opacity, so you can see through to the data beneath
 
-:::{.callout-important}
+:::{.callout-tip}
 ### If you can't see things you expect, check that they aren't hidden!
 :::
 
@@ -464,10 +464,14 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 - Above threshold: the class that these pixels will be assigned to
 - Below threshold: the class that these pixels will be assigned to
 
+:::{.callout-tip}
+#### Double-click on `Above` or `Below` to swap classes!
+:::
+
 ## Thresholder post-processing
 
 :::{.callout-important}
-You need to save your thresholder before you can use it!
+### You need to save your thresholder before you can use it!
 :::
 
 - Measure: requires existing Annotations, gives areas and % of classes
@@ -482,9 +486,10 @@ You need to save your thresholder before you can use it!
 
 ## Thresholder: Create objects
 
-![](images/Pixel_classifier_choose_parents.png){fig-alt="Screenshot of QuPath `Create objects` dialog." fig-align="center"}
+![](images/Create_objects.png){fig-alt="Screenshot of QuPath `Create objects` dialog." fig-align="center"}
 
 We are segmenting 4 large tissue slices, so we want to make:
+
 - Annotations, that are large, without holes
 - Separate objects (of the same class) for each slice
 
