@@ -1,5 +1,17 @@
 {
     "markdown.copyFiles.destination": {
         "*": "images/"
-      }
+      },
+      "cSpell.enableFiletypes": [
+        "quarto"
+      ],
+      "cSpell.ignoreWords": [
+        "callout",
+        "transparentback"
+      ],
+      "cSpell.words": [
+        "autoset",
+        "Bankhead",
+        "Prefilter"
+      ]
 }

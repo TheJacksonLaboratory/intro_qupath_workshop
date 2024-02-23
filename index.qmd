@@ -63,7 +63,7 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 
 - Was designed for very large, multiscale 2D files
 
-- Includes extensitve annotation, overlay, and visualization options
+- Includes extensive annotation, overlay, and visualization options
 
 - It includes robust algorithms for common analysis tasks
 
@@ -236,7 +236,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 ## QuPath toolbar: information
 
-![](images/QuPath_info_tools.png){fig-alt="Screenshot of QuPath application window with the Prefereces, Log, and Interactive Help tools marked in red." fig-align="center"}
+![](images/QuPath_info_tools.png){fig-alt="Screenshot of QuPath application window with the Preferences, Log, and Interactive Help tools marked in red." fig-align="center"}
 
 ## QuPath toolbar: information
 
@@ -273,7 +273,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 - Slider controls opacity, so you can see through to the data beneath
 
 :::{.callout-important}
-### If you can't see things you expect, check that they arn't hidden!
+### If you can't see things you expect, check that they aren't hidden!
 :::
 
 ## QuPath toolbar: measurements table & scripting
@@ -298,7 +298,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ## Annotation tool tips and tricks
 
 - Annotations are editable, unless you lock them (Right-click ‣ Lock)
-- Move tool can be toggled with `Spacebar`
+- Move tool can be toggled with `Space bar`
     - Double-click to *select* objects
 - For Ellipse & Rectangle can also use Objects ‣ Annotations… ‣ Specify annotation
 - To start fresh: Objects ‣ Delete… ‣ Delete all annotations
@@ -310,7 +310,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
     - start from the *inside* of the annotation, to expand it
         - Note: if you want to make an Annotation *inside* another Annotation, you need to first lock it.
     - hold `Alt/Option` and start from the *outside* to reduce it
-- Use `Shift` with the Brush or Wand to add to an Annotation (discontinous)
+- Use `Shift` with the Brush or Wand to add to an Annotation (discontinuous)
 
 ## Analysis Pane: Annotation tab
 
@@ -415,8 +415,8 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ## Visual stain editor
 
 - At the bottom are settings for `Auto` vector estimation
-- Click `Auto` to get an intial estimate
-- Look at the color panels, which are views at the 3D colorspace from orthogonal sides
+- Click `Auto` to get an initial estimate
+- Look at the color panels, which are views at the 3D color space from orthogonal sides
     - if you have other pixels, can try to exclude them (checkbox) and run Auto again
 - want the vectors to encompass the reddish-pink-purple pixels (those of H&E)
 - Can manually tweak the vectors by using the handles
@@ -492,6 +492,7 @@ We are segmenting 4 large tissue slices, so we want to make:
 
 We saved our classifier (thresholder), so we can re-use it:
 
-![](images/load_pixel_classifier_menu.png){fig-alt="Screenshot of QuPath `Classify` menu showinf the `Load classifier` dialog." fig-align="center"}
+![](images/load_pixel_classifier_menu.png){fig-alt="Screenshot of QuPath `Classify` menu showing the `Load classifier` dialog." fig-align="center"}
 
 ![](images/load_pixel_classifier.png){fig-alt="Screenshot of QuPath `Load pixel classifier` dialog." fig-align="center"}
+
