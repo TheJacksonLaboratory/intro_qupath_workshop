@@ -254,9 +254,9 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 - **+** : Move tool: pan around the image or move objects
 - For the Polyline tool: double-click to end
+- Brush: the size scales with zoom level
 - Magic wand: context-aware brush that takes into account intensity & zoom
-- For Brush & Wand tool, `Alt/Option` key enables subtract mode
-- **S** : Switch to selection mode, where tools *select* objects instead
+- `S`: Switch to selection mode, where tools *select* objects instead
 
 ## QuPath toolbar: brightness & contrast, zoom
 
@@ -284,6 +284,14 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 - Measurement Table drop-down menu enables opening a table view of measurements associated with different object types
 - The Script Editor is used for automation and advanced tasks
+
+## QuPath GUI Pro-tip: Command list
+
+:::{.callout-tip}
+### For menu items, press `Command/Control-L` and start typing what you remember to get the menu item/command!
+:::
+
+![](images/command_list.png){fig-alt="Screenshot of QuPath `Command list` dialog, with the filter box marked in red." fig-align="center"}
 
 # Making & Managing Annotations
 
