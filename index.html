@@ -432,15 +432,15 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<p><strong>When making a project, remember to create a folder for it!</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>When making a project, remember to create a folder for it!</strong></p>
+
 </div>
 </div>
 </div>
 <ul>
-<li>Drag-and-drop an empty folder</li>
+<li>Drag-and-drop an <strong>empty</strong> folder</li>
 </ul>
 </section>
 <section id="anatomy-of-a-qupath-project" class="slide level2">
@@ -453,7 +453,7 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <li>Drag and drop</li>
 <li>File ‣ Project… ‣ Add images</li>
 </ul>
-<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
@@ -532,7 +532,7 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <section id="set-image-type" class="slide level2">
 <h2>Set Image type</h2>
 
-<img data-src="images/set_image_type.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of `Set image type` dialog."><div class="callout callout-important callout-titled callout-style-default">
+<img data-src="images/set_image_type.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of `Set image type` dialog."><div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
@@ -626,7 +626,8 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <img data-src="images/QuPath_info_tools.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath application window with the Preferences, Log, and Interactive Help tools marked in red."></section>
 <section id="qupath-toolbar-information-1" class="slide level2">
 <h2>QuPath toolbar: information</h2>
-<ul>
+
+<img data-src="images/toolbar_info_tools_inset.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window with the Preferences, Log, and Interactive Help tools marked in red."><ul>
 <li>Preferences: settings that customize QuPath behavior, including look-and-feel, extensions, etc.</li>
 <li>Log: message logger, showing Info, Warnings, and Errors—helpful when troubleshooting or asking for help
 <ul>
@@ -643,10 +644,10 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 
 <img data-src="images/QuPath_annotation_tools_1.png" class="quarto-figure quarto-figure-center r-stretch" alt="Inset of screenshot of QuPath application window (top left) showing annotation tools in red."><ul>
 <li><strong>+</strong> : Move tool: pan around the image or move objects</li>
-<li>For the Polygon tool: double-click to end</li>
+<li>For the Polyline tool: double-click to end</li>
+<li>Brush: the size scales with zoom level</li>
 <li>Magic wand: context-aware brush that takes into account intensity &amp; zoom</li>
-<li>For Brush &amp; Wand tool, <code>Alt/Option</code> key enables subtract mode</li>
-<li><strong>S</strong> : Switch to selection mode, where tools <em>select</em> objects instead</li>
+<li><code>S</code>: Switch to selection mode, where tools <em>select</em> objects instead</li>
 </ul>
 </section>
 <section id="qupath-toolbar-brightness-contrast-zoom" class="slide level2">
@@ -666,7 +667,7 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <li><code>C</code>: show/hides pixel classification overlay</li>
 <li>Slider controls opacity, so you can see through to the data beneath</li>
 </ul>
-<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
@@ -687,7 +688,24 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <li>Measurement Table drop-down menu enables opening a table view of measurements associated with different object types</li>
 <li>The Script Editor is used for automation and advanced tasks</li>
 </ul>
-</section></section>
+</section>
+<section id="qupath-gui-pro-tip-command-list" class="slide level2">
+<h2>QuPath GUI Pro-tip: Command list</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>For menu items, press <code>Command/Control-L</code> and start typing what you remember to get the menu item/command!</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+
+<img data-src="images/command_list.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Command list` dialog, with the filter box marked in red."></section></section>
 <section>
 <section id="making-managing-annotations" class="title-slide slide level1 center">
 <h1>Making &amp; Managing Annotations</h1>
@@ -980,6 +998,19 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <li>Above threshold: the class that these pixels will be assigned to</li>
 <li>Below threshold: the class that these pixels will be assigned to</li>
 </ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Double-click on <code>Above</code> or <code>Below</code> to swap classes!</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
 </section>
 <section id="thresholder-post-processing" class="slide level2">
 <h2>Thresholder post-processing</h2>
@@ -989,10 +1020,10 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<p><strong>You need to save your thresholder before you can use it!</strong></p>
 </div>
 <div class="callout-content">
-<p>You need to save your thresholder before you can use it!</p>
+
 </div>
 </div>
 </div>
@@ -1012,7 +1043,11 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <section id="thresholder-create-objects-1" class="slide level2">
 <h2>Thresholder: Create objects</h2>
 
-<img data-src="images/Pixel_classifier_choose_parents.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Create objects` dialog."><p>We are segmenting 4 large tissue slices, so we want to make: - Annotations, that are large, without holes - Separate objects (of the same class) for each slice</p>
+<img data-src="images/Create_objects.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Create objects` dialog."><p>We are segmenting 4 large tissue slices, so we want to make:</p>
+<ul>
+<li>Annotations, that are large, without holes</li>
+<li>Separate objects (of the same class) for each slice</li>
+</ul>
 </section>
 <section id="thresholder-load-classifier-to-reuse" class="slide level2">
 <h2>Thresholder: Load classifier to reuse</h2>
