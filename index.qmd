@@ -35,7 +35,15 @@ Research IT
 :::
 ::::
 
-## Welcome
+
+## Lesson Plan
+
+- Brief introduction to QuPath
+- Key concept: Projects
+- QuPath GUI layout and toolbars
+- Making & Managing Annotations
+- Setting stain Vectors
+- Pixel classification using a thresholder
 
 ## What is QuPath?
 
@@ -94,7 +102,7 @@ QuPath has a graphical user interface (`GUI`) for performant working with very l
 - YouTube Channel: [https://www.youtube.com/c/QuPath](https://www.youtube.com/c/QuPath)
 - Image.sc Forums: [https://forum.image.sc/tag/qupath](https://forum.image.sc/tag/qupath)
 
-## Key concept: QuPath `project`
+# Key concept: QuPath `project`
 
 - `projects` are the best way to organize your analysis work
 - `projects` are frequently required by some scripts/extensions
@@ -285,7 +293,7 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 - Measurement Table drop-down menu enables opening a table view of measurements associated with different object types
 - The Script Editor is used for automation and advanced tasks
 
-## QuPath GUI Pro-tip: Command list
+# QuPath GUI Pro-tip: Command list
 
 :::{.callout-tip}
 ### For menu items, press `Command/Control-L` and start typing what you remember to get the menu item/command!
@@ -411,15 +419,6 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 
 # Setting stain vectors
 
-## Start with a clean copy
-
-- Let's start by duplicating our image:
-    - Analysis Pane ‣ Projects tab
-    - Right-click the image and select `Duplicate`
-    - **Un-check** `Also duplicate data files`
-
-![](images/duplicate_image_no_data.png){fig-alt="Screenshot of QuPath `Duplicate image` dialog, with `Also duplicate data files` in red." fig-align="center"}
-
 ## Stain separation/deconvolution
 
 - Aims to extract information about individual chromogenic stains from the RGB values of each pixel
@@ -430,6 +429,15 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 :::
 
 - When you select `image type` on import, default separation is performed
+
+## Start with a clean copy
+
+- Let's start by duplicating our image:
+    - Analysis Pane ‣ Projects tab
+    - Right-click the image and select `Duplicate`
+    - **Un-check** `Also duplicate data files`
+
+![](images/duplicate_image_no_data.png){fig-alt="Screenshot of QuPath `Duplicate image` dialog, with `Also duplicate data files` in red." fig-align="center"}
 
 ## Setting stain vectors
 
