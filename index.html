@@ -749,6 +749,11 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <li>Use <code>Shift</code> with the Brush or Wand to add to an Annotation (discontinuous)</li>
 </ul>
 </section>
+<section id="annotations-exercise-1" class="slide level2">
+<h2>Annotations exercise 1</h2>
+<p><br></p>
+<h3 id="take-a-few-minutes-to-try-out-the-different-tools">Take a few minutes to try out the different tools</h3>
+</section>
 <section id="analysis-pane-annotation-tab" class="slide level2">
 <h2>Analysis Pane: Annotation tab</h2>
 
@@ -806,6 +811,28 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 </div>
 </div>
 </section>
+<section id="annotations-exercise-2" class="slide level2">
+<h2>Annotations exercise 2</h2>
+<ol type="1">
+<li>Add a <code>Tissue</code> class</li>
+<li>Make Annotations for each of the tissue slices</li>
+<li>Assign the 4 Annotations to the <code>Tissue</code> class</li>
+<li>Name the 4 Annotations <code>slice 1</code> through <code>slice 4</code> (left to right)</li>
+</ol>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>First delete all annotations (Objects ‣ Delete…) or duplicate the image (uncheck <code>Also duplicate data</code>)</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</section>
 <section id="analysis-pane-annotation-measurements" class="slide level2">
 <h2>Analysis Pane: Annotation measurements</h2>
 
@@ -851,6 +878,29 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <li>QuPath will insert <strong>the selected</strong> objects into the hierarchy</li>
 </ul></li>
 </ul>
+</section>
+<section id="annotations-exercise-3" class="slide level2">
+<h2>Annotations exercise 3</h2>
+<ol type="1">
+<li>Make a <code>Border</code> class</li>
+<li>Make a few <code>Line</code> Annotations per tissue slice to measure the thickness of the dark purple edge region</li>
+<li>Assign the lines to the <code>Border</code> class</li>
+<li>Use <code>Resolve hierarchy</code> to assign the lines to slices</li>
+<li>Browse the <code>Measurements table</code>: right-click to show just the <code>Border</code> class</li>
+</ol>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>First <code>Lock</code> all of your <code>Tissue</code> Annotations to prevent accidental editing</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="setting-stain-vectors" class="title-slide slide level1 center">
@@ -935,6 +985,15 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <img data-src="images/brightness_contrast.png" class="quarto-figure quarto-figure-center r-stretch" alt="Screenshot of QuPath `Brightness &amp; Contrast` dialog with red arrows indicating the handles of the stain vectors, as well as the Auto button and the `exclude unrecognized stains` checkbox."><ul>
 <li>Want visual separation between stains and low residual</li>
 </ul>
+</section>
+<section id="stain-vectors-exercise" class="slide level2">
+<h2>Stain vectors exercise</h2>
+<ol type="1">
+<li>Make a duplicate image, uncheck <code>Also duplicate data</code>, and name it <code>vectors</code> (or similar)</li>
+<li>Draw a small Annotation that includes both stains and background, ~30-50% background</li>
+<li>Use <code>Analyze ‣ Estimate stain vectors</code> and the <code>Visual stain editor</code> to adjust the stain deconvolution</li>
+<li>Use <code>Brightness &amp; Contrast</code> to check the H&amp;E color channels in different areas</li>
+</ol>
 </section></section>
 <section>
 <section id="automated-annotations-via-thresholding" class="title-slide slide level1 center">
@@ -1062,6 +1121,17 @@ QuPath has a graphical user interface (<code>GUI</code>) for performant working 
 <p><img data-src="images/load_pixel_classifier.png" class="quarto-figure quarto-figure-center" alt="Screenshot of QuPath `Load pixel classifier` dialog."></p>
 </figure>
 </div>
+</section>
+<section id="thresholder-exercise" class="slide level2">
+<h2>Thresholder exercise</h2>
+<ul>
+<li>Duplicate your stain vectors image and delete any Annotations</li>
+<li>Zoom so you see 1 or 2 whole tissue slices</li>
+<li>Open <code>Pixel classification ‣ Create thresholder</code></li>
+<li>Adjust parameters until you have the 4 tissue slices as class <code>Tissue</code></li>
+<li>Save the classifier as <code>Tissue</code> (or similar)</li>
+<li>Use <code>Create objects</code> to make 4 annotations, one for each slice</li>
+</ul>
 <div class="quarto-auto-generated-content">
 <p><img src="images/JAX_logo_rgb_transparentback.png" class="slide-logo"></p>
 <div class="footer footer-default">
