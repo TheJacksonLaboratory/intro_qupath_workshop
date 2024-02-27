@@ -322,6 +322,12 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
     - hold `Alt/Option` and start from the *outside* to reduce it
 - Use `Shift` with the Brush or Wand to add to an Annotation (discontinuous)
 
+## Annotations exercise 1
+
+<br/>
+
+### Take a few minutes to try out the different tools
+
 ## Analysis Pane: Annotation tab
 
 ![](images/manage_annotations.png){fig-alt="Screenshot of QuPath  application  showing the Annotations tab of the Analysis Pane in red." fig-align="center"}
@@ -354,6 +360,17 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ### Classes with a `*` are ignored in measurements, percentages, etc.
 :::
 
+## Annotations exercise 2
+
+1. Add a `Tissue` class
+2. Make Annotations for each of the tissue slices
+3. Assign the 4 Annotations to the `Tissue` class
+4. Name the 4 Annotations `slice 1` through `slice 4` (left to right)
+
+:::{.callout-tip}
+### First delete all annotations (Objects ‣ Delete…) or duplicate the image (uncheck `Also duplicate data`)
+:::
+
 ## Analysis Pane: Annotation measurements
 
 ![](images/Annotation_measurements_1.png){fig-alt="Inset of screenshot of QuPath  application showing the Annotations measurements pane of the Annotations tab of the Analysis Pane." fig-align="center"}
@@ -379,6 +396,18 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
     - QuPath will place **all** child objects with parent objects 
 - Objects ‣ Annotations… ‣ Insert into hierarchy
     - QuPath will insert **the selected** objects into the hierarchy
+
+## Annotations exercise 3
+
+1. Make a `Border` class
+2. Make a few `Line` Annotations per tissue slice to measure the thickness of the dark purple edge region
+3. Assign the lines to the `Border` class
+4. Use `Resolve hierarchy` to assign the lines to slices
+5. Browse the `Measurements table`: right-click to show just the `Border` class 
+
+:::{.callout-tip}
+### First `Lock` all of your `Tissue` Annotations to prevent accidental editing
+:::
 
 # Setting stain vectors
 
@@ -436,6 +465,13 @@ QuPath can handle large 2D images, e.g. whole-slide images—*there is no need t
 ![](images/brightness_contrast.png){fig-alt="Screenshot of QuPath `Brightness & Contrast` dialog with red arrows indicating the handles of the stain vectors, as well as the Auto button and the `exclude unrecognized stains` checkbox." fig-align="center"}
 
 - Want visual separation between stains and low residual
+
+## Stain vectors exercise 
+
+1. Make a duplicate image, uncheck `Also duplicate data`, and name it `vectors` (or similar)
+2. Draw a small Annotation that includes both stains and background, ~30-50% background
+3. Use `Analyze ‣ Estimate stain vectors` and the `Visual stain editor` to adjust the stain deconvolution
+4. Use `Brightness & Contrast` to check the H&E color channels in different areas
 
 # Automated Annotations via Thresholding
 
@@ -511,3 +547,11 @@ We saved our classifier (thresholder), so we can re-use it:
 
 ![](images/load_pixel_classifier.png){fig-alt="Screenshot of QuPath `Load pixel classifier` dialog." fig-align="center"}
 
+## Thresholder exercise
+
+- Duplicate your stain vectors image and delete any Annotations
+- Zoom so you see 1 or 2 whole tissue slices
+- Open `Pixel classification ‣ Create thresholder`
+- Adjust parameters until you have the 4 tissue slices as class `Tissue`
+- Save the classifier as `Tissue` (or similar)
+- Use `Create objects` to make 4 annotations, one for each slice
