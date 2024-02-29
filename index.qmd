@@ -563,3 +563,33 @@ We saved our classifier (thresholder), so we can re-use it:
 - Adjust parameters until you have the 4 tissue slices as class `Tissue`
 - Save the classifier as `Tissue` (or similar)
 - Use `Create objects` to make 4 annotations, one for each slice
+
+# Sharing QuPath projects
+
+## QuPath projects are portable
+
+### Sharing a QuPath project:
+- zip up the entire project directory
+- email or share it with a colleague
+
+:::{.callout-important}
+**Ensure they can access the actual image files!  
+The project folder only contains QuPath objects and data!  
+The image files will not be inside the project (unless you had placed them there)!**
+:::
+
+## Receiving a QuPath project
+
+:::{.callout-important}
+#### You will need to re-link the project to the location of the actual image files
+:::
+
+![](images/project_Update_URIs.png){fig-alt="Screenshot of QuPath `Update URIs` dialog." fig-align="center"}
+
+## Re-linking images: Update URIs
+
+#### Double-click each red image and choose the location:
+
+![](images/project_update_URIs_2.png){fig-alt="Screenshot of QuPath `Update URIs` dialog showing the `Choose URI` dialog." fig-align="center"}
+
+#### Or click `Search…` to find the new enclosing folder
