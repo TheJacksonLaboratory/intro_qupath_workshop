@@ -588,8 +588,8 @@ The image files will not be inside the project (unless you had placed them there
 
 ## Re-linking images: Update URIs
 
-#### Double-click each red image and choose the location:
+#### Double-click each red image and choose the new location individually:
 
 ![](images/project_update_URIs_2.png){fig-alt="Screenshot of QuPath `Update URIs` dialog showing the `Choose URI` dialog." fig-align="center"}
 
-#### Or click `Search…` to find the new enclosing folder
+#### Or if all of the images are together, click `Search…` to find the new enclosing folder 
