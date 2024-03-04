@@ -6,12 +6,18 @@
         "quarto"
       ],
       "cSpell.ignoreWords": [
+        "Rtrees",
         "callout",
         "transparentback"
       ],
       "cSpell.words": [
         "autoset",
         "Bankhead",
-        "Prefilter"
+        "Cellpose",
+        "Polyline",
+        "Prefilter",
+        "Reweight",
+        "Stardist",
+        "Stroma"
       ]
 }

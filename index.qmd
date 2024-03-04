@@ -710,7 +710,7 @@ We could make even more...
 
 - Channels: choose channels that can discriminate the classes, typically the stains
 - Scales: controls the size of the smoothing/processing kernel, so can help identify (or suppress) details
-- Features: additional calculated transformations, can check their importance in the log (for Rtrees only)
+- Features: additional calculated transformations, can check their importance in the log (for RTrees only)
 
 :::{.callout-tip}
 #### Typically, *fewer*, but *well-chosen* features provides more robust results.
@@ -721,12 +721,12 @@ We could make even more...
 |  | From QuPath docs |
 |---------|---------|
 | *Gaussian filter* | General-purpose |
-| Laplacian of Gaussian | Blobby things, some edges |
+| Laplacian of Gaussian | Blob-like things, some edges |
 | *Weighted deviation* | Textured vs. smooth areas |
 | Gradient magnitude | Edges |
 | Structure tensor eigenvalues | Long, stringy things |
 | Structure tensor coherence | ‘Oriented’ regions |
-| Hessian determinant | Blobby things |
+| Hessian determinant | Blob-like things |
 | Hessian eigenvalues | Long, stringy things |
 
 ## Pixel classifier: visualizing features
@@ -739,7 +739,7 @@ We could make even more...
 
 ## Pixel classifier: advanced options
 
-![](images/Pix_class_advanced_optons.png){fig-alt="Screenshot of QuPath `Pixel classifier` dialog with the `Advanced options` dialog shown. The `Maximum samples` and `Reweight samples` options are marked in red." fig-align="center"}
+![](images/Pix_class_advanced_options.png){fig-alt="Screenshot of QuPath `Pixel classifier` dialog with the `Advanced options` dialog shown. The `Maximum samples` and `Reweight samples` options are marked in red." fig-align="center"}
 
 ## Pixel classifier: advanced options
 
@@ -759,7 +759,7 @@ We could make even more...
 
 <br />
 
-Using `Random trees` classifier, test out impact of classifier paramters
+Using `Random trees` classifier, test out impact of classifier parameters
 - Resolution
 - Features: use the `Log` to check importance
 
@@ -823,8 +823,6 @@ When reasonable, save the classifier and use `Create objects` as before
 
 ## Special Detections
 
-<br />
-
 ### Cells
 - two ROI: cell boundary and nucleus (optional)
 - have shape and intensity measurements for both
@@ -858,8 +856,18 @@ When reasonable, save the classifier and use `Create objects` as before
 - Tile detections have no measurements
 :::
 
-
 # Cell detection
+
+## QuPath cell detection
+
+- built-in cell segmentation algorithm, based on thresholding
+    - automatic tiling and parallel processing
+- detects nucleus and then expands to get cell body
+- obtained Cell Detections will have shape and intensity measurements for both nucleus and cell
+
+:::{.callout-note}
+#### ML approaches including Cellpose and Stardist are available as extensions
+:::
 
 ## Detecting cells: setup
 
@@ -883,6 +891,51 @@ When reasonable, save the classifier and use `Create objects` as before
 `Positive cell detection` allows setting additional intensity thresholds for scoring (e.g. DAB)
 :::
 
-## Cell detection dialog
+## Cell detection dialog (top)
 
 ![](images/cell_detection_top.png){fig-alt="Screenshot of top portion of QuPath `Cell detection` dialog" fig-align="center"}
+
+## Cell detection parameters: setup
+
+:::{.callout-note}
+#### Defaults are frequently pretty good!
+:::
+
+- Detection image: the channel where nuclei are most apparent, typically `Hematoxylin OD`, but `OD Sum` can be useful for H-DAB
+
+:::{.callout-note}
+#### Use B&C dialog to take a look!
+:::
+
+- Requested pixel size: the resolution of the image used for the processing, enter `0` for native (full) resolution. Trade-off of speed vs. detail, 0.5 or 1 frequently good.
+
+## Cell detection parameters: nucleus
+
+- Background radius: radius of area used for background subtraction, typically want it to be larger than the size of nuclei/clusters or set to `0` to disable
+- Opening by reconstruction: turn off if background isn't homogenous and you see tiling artifacts
+- Median filter radius: radius of median filter (smoothing), higher values will tend to reduce fragmentation, `0` to disable
+- Sigma: radius of gaussian filter (smoothing), higher values will tend to reduce fragmentation
+
+## Cell detection dialog (middle)
+
+![](images/cell_detection_middle.png){fig-alt="Screenshot of middle portion of QuPath `Cell detection` dialog" fig-align="center"}
+
+## Cell detection parameters: nucleus, intensity
+
+- Minimum area: area of smallest nuclei
+- Maximum area: area of largest nuclei
+- Threshold: minimum signal of nuclei (relative to background)
+- Max background intensity: if background subtraction was performed, can have regions ignored (e.g. tissue fold or staining artifact)
+- Split by shape: uses roundness to split clusters/clumps, generally want this ticked
+
+## Cell detection dialog (bottom)
+
+![](images/cell_detection_bottom.png){fig-alt="Screenshot of bottom portion of QuPath `Cell detection` dialog" fig-align="center"}
+
+## Cell detection parameters: cell, general
+
+- Cell expansion: how much to expand nuclei by to get cell borders
+    - can make it small to get peri-nuclear
+- Include nucleus: to get nuclei as ROI ensure this is ticked
+- Smooth boundaries: smooths based on resolution, reduces memory usage, generally want it ticked
+- Make measurements: want this ticked to get measurements for the generated Detections
