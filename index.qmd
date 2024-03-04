@@ -948,7 +948,8 @@ When reasonable, save the classifier and use `Create objects` as before
     - Sigma
 
 :::{.callout-tip}
-#### You can see the number of counted cells in the Analysis pane Annotation tab
+- You can see the number of counted cells in the Analysis pane Annotation tab
+- Press `D` to toggle showing Detections or `F` to toggle their Fill
 :::    
 
 ## Running cell detection on our slices
@@ -983,3 +984,45 @@ When reasonable, save the classifier and use `Create objects` as before
 :::
 
 - Can also copy Workflow steps individually using right-click `Copy command` to paste into a script
+
+## Detection measurements
+
+- Can see measurements in the Measurements table (`Show detection measurements`)
+- Can also visualize using a `Measurements map`: `Measure ‣ Show measurements maps`
+    - "heat" maps of any of the Detection measurements
+    - can be informative for `Object classification` by showing what cells and measurements cluster where
+
+:::{.callout-tip}
+#### `Smoothed measurements` take into account local area of each cell and can be even more useful 
+:::
+
+# Object classification in QuPath
+
+## Object classification 
+
+- Both annotations and detections can be classified into classes using a ML classifier, like pixels
+- Object classifiers are trained using manual annotations of 2 or more Classes
+    - Area-based Annotations (e.g. brush) or Points are best
+
+:::{.callout-important}
+- Classification *requires* measurements! 
+- **The same measurements** must be present for both training and inference Objects
+:::
+
+## Training an Object classifier
+
+ `Classify ‣ Object classification ‣ Train object classifier`
+
+![](images/classify_train_object_class.png){fig-alt="Screenshot of QuPath `Train object classifier` dialog" fig-align="center"}
+
+## Training an Object classifier
+
+- Similar to training the Pixel classifier, in terms of RTrees vs. ANN_MLP
+    - Can log variable importance for RTrees
+- Features: choose `Selected features` and click `Select` to reduce feature space
+- Classes: choose `Selected classes` and click `Select` to train on selected Classes only
+
+:::{.callout-important}
+- `Live update` applies the classifier
+- To clear the classifications use `Classify ‣ Object classification ‣ Reset detection classifications`
+:::
