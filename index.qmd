@@ -939,3 +939,47 @@ When reasonable, save the classifier and use `Create objects` as before
 - Include nucleus: to get nuclei as ROI ensure this is ticked
 - Smooth boundaries: smooths based on resolution, reduces memory usage, generally want it ticked
 - Make measurements: want this ticked to get measurements for the generated Detections
+
+## Cell detection exercise
+
+- Using your rectangular Annotation, test out the cell detection parameters, by re-running cell detection with different parameters e.g.
+    - Requested pixel size
+    - Median filter radius
+    - Sigma
+
+:::{.callout-tip}
+#### You can see the number of counted cells in the Analysis pane Annotation tab
+:::    
+
+## Running cell detection on our slices
+
+:::{.callout-important}
+#### Depending on the parameters and power of your computer this can take a few minutes!
+:::
+
+- Delete the rectangular Annotation and *don't keep descendants* (the test Detections)
+- Select the Annotation of the slice you want to detect (or select all 4)
+- Click `Run` again if you have the `Cell detection` dialog open
+
+:::{.callout-important}
+#### `Cell detection` parameters are not saved. If you closed the dialog your settings are lost, but can be recovered in the Analysis pane Workflow tab
+:::
+
+## Using the Workflows tab
+
+![](images/Workflow_cell_detection.png){fig-alt="Inset of screenshot of QuPath application window (top left) showing the Analysis pane Workflow tab." fig-align="center"}
+
+:::{.callout-tip}
+#### Double click the Workflow step you want to re-run!
+:::
+
+## Using the Workflows tab
+
+- Workflow steps are saved for each image individually
+- Can create scripts from Workflows to easily repeat/reapply an analysis
+
+:::{.callout-tip}
+#### Use `Create workflow` button to remove any spurious steps prior to `Create script`
+:::
+
+- Can also copy Workflow steps individually using right-click `Copy command` to paste into a script
