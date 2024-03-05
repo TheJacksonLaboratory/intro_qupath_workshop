@@ -605,6 +605,8 @@ The image files will not be inside the project (unless you had placed them there
 ### Ensure `Also duplicate data` is checked!
 :::
 
+- Ensure just there are just 4 Annotations, one for each tissue slice
+
 ## Thresholding within an Annotation 
 
 - Let's analyze the white areas within the `Tissue` Annotations
@@ -616,14 +618,14 @@ The image files will not be inside the project (unless you had placed them there
 ## Thresholding within an Annotation
 
 - Once you have reasonable segmentation, give the classifier a meaningful name and save it
-- To add area-based measurements to our existing `Tissue` Annotations, click `Measure`
+- To add area-based measurements to *our existing* `Tissue` Annotations, click `Measure`
 
 ![](images/pix_class_measure.png){fig-alt="Screenshot of QuPath `Pixel classifier` dialog for creating measurements in Annotations." fig-align="center"}
 
 
-## Create objects within an Annotation
+## Creating objects within an Annotation
 
-- Use `Classify ‣ Pixel classification ‣ Load thresholder` and load the previous classifier
+- Use `Classify ‣ Pixel classification ‣ Load pixel classifier` and load the previous classifier
 - Click `Create objects` and select `All Annotations` for `Choose parent objects`:
 
 ![](images/pixel_class_parents_annotations.png){fig-alt="Screenshot of QuPath `Pixel classifier` dialog" fig-align="center"}
@@ -643,9 +645,6 @@ The image files will not be inside the project (unless you had placed them there
 
 ![](images/create_objects_dialog_holes.png){fig-alt="Screenshot of QuPath `Create objects` dialog with `Split objects` unchecked, highlighted in red." fig-align="center"}
 
-:::{.callout-important}
-### Remember to `Resolve hierarchy`
-:::
 
 # Training a Pixel classifier
 
@@ -653,7 +652,7 @@ The image files will not be inside the project (unless you had placed them there
 
 - QuPath includes built in support for machine learning pixel classification
 - Classifiers can be trained, saved, and used for inference (classification)
-- Instead of a simple numeric cutoff, training uses Annotations of two *or more* classes and a number of different channels & `features`
+- Instead of a simple numeric cutoff, training uses Annotations of two *or more* classes and a number of different channels & `features` (computed values per pixel)
 
 ## Training a pixel classifier: setup
 
@@ -664,11 +663,13 @@ The image files will not be inside the project (unless you had placed them there
 ### Ensure `Also duplicate data` is checked!
 :::
 
+- Ensure just there are just 4 Annotations, one for each tissue slice
+
 ## Training a pixel classifier: setup
 
 - Ensure you have three classes:
-    - Stroma, border, lumens
-- use the Polyline tool (V) to `paint` a few squiggles in:
+    - e.g. Stroma, border, lumens
+- Use the Polyline tool (V) to `paint` a few squiggles in:
     - the dark purple/brown border areas, set class `border`
     - the white `holes`, set class `lumens`
     - other parts of the tissue slice, set class `Stroma`
@@ -759,9 +760,10 @@ We could make even more...
 
 <br />
 
-Using `Random trees` classifier, test out impact of classifier parameters
-- Resolution
-- Features: use the `Log` to check importance
+Using `Random trees` classifier, test out impact of classifier parameters, e.g.
+
+    - Resolution
+    - Features: use the `Log` to check importance
 
 :::{.callout-important}
 #### You can add more Annotations!
@@ -988,9 +990,9 @@ When reasonable, save the classifier and use `Create objects` as before
 ## Detection measurements
 
 - Can see measurements in the Measurements table (`Show detection measurements`)
-- Can also visualize using a `Measurements map`: `Measure ‣ Show measurements maps`
-    - "heat" maps of any of the Detection measurements
-    - can be informative for `Object classification` by showing what cells and measurements cluster where
+    - More export options: `Measure ‣ Export measurements`
+- Can also visualize using "heat" maps of any Detection measurements: `Measure ‣ Show measurements maps`
+    - can be informative for `Object classification`
 
 :::{.callout-tip}
 #### `Smoothed measurements` take into account local area of each cell and can be even more useful 
@@ -1023,6 +1025,12 @@ When reasonable, save the classifier and use `Create objects` as before
 - Classes: choose `Selected classes` and click `Select` to train on selected Classes only
 
 :::{.callout-important}
-- `Live update` applies the classifier
+#### `Live update` applies the classifier
 - To clear the classifications use `Classify ‣ Object classification ‣ Reset detection classifications`
 :::
+
+## Additional Object classification features
+
+- Add intensity-based sub-classification (e.g. for DAB): `Classify ‣ Object classification ‣ Set cell intensity classifications`
+- Use density maps to visualize detections: `Analyze ‣ Density maps ‣ Create density map`
+    - these can be converted into Annotations (ROI)
