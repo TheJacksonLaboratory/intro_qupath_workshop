@@ -758,9 +758,7 @@ We could make even more...
 
 ## Pixel classifier: exercise
 
-<br />
-
-Using `Random trees` classifier, test out impact of classifier parameters, e.g.
+Using `Random trees` classifier, test out impact of classifier parameters, especially:
 
     - Resolution
     - Features: use the `Log` to check importance
@@ -769,7 +767,11 @@ Using `Random trees` classifier, test out impact of classifier parameters, e.g.
 #### You can add more Annotations!
 :::
 
-When reasonable, save the classifier and use `Create objects` as before
+When reasonable, save the classifier and your image with training Annotations
+
+:::{.callout-tip}
+#### Load and run your classifier (`Create objects`) on a fresh copy of the 4 Annotation image 
+:::
 
 ## Pixel classifier: final tips
 
