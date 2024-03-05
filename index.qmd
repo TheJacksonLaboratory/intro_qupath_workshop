@@ -1029,6 +1029,22 @@ When reasonable, save the classifier and use `Create objects` as before
 - To clear the classifications use `Classify ‣ Object classification ‣ Reset detection classifications`
 :::
 
+## Object classifier exercise
+
+:::{.callout-note}
+#### This only makes sense if you ran Cell detection on a tissue slice
+:::
+
+- Use the brush tool to annotate Detections corresponding to three classes:
+    - `border`: the dark purple/brown area at the edge
+    - `Tumor`: the islands of dense hematoxylin staining
+    - `Stroma`: other areas of the slice
+- Test the effect of the Object classification training parameters
+
+:::{.callout-tip}
+#### Press `D` to toggle showing Detections or `F` to toggle their Fill
+:::
+
 ## Additional Object classification features
 
 - Add intensity-based sub-classification (e.g. for DAB): `Classify ‣ Object classification ‣ Set cell intensity classifications`
